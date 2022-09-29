@@ -9,33 +9,34 @@ public enum StringTokenType implements TokenType {
     // `Newline` is special, it will not be passed to lexer
     Newline("\n"),
 
-    // string-based token types
-    // -- signs
+    // signs
     Plus("+"),
     Minus("-"),
     Star("*"),
     Slash("/"),
     Equal("="),
-    LeftParentheses("\\("),
-    RightParentheses("\\)"),
+    LeftParentheses("("),
+    RightParentheses(")"),
 
-    // -- keywords
+    // keywords
     If("if"),
-    Else("else"),
-
-    // regex-based token types
-    Id("[\\w_$][\\w\\d_$]*");
+    Else("else");
 
     /**
-     * The pattern of the token type.
+     * The pattern string of this token type.
      */
-    public final Pattern pattern;
+    final String pattern;
 
     /**
-     * Creates a token type.
-     * @param pattern the pattern string of the token type
+     * Creates a string-based token type.
+     * @param pattern the pattern string of this token type
      */
     StringTokenType(String pattern) {
-        this.pattern = Pattern.compile(pattern);
+        this.pattern = pattern;
+    }
+
+    @Override
+    public String getPattern() {
+        return this.pattern;
     }
 }
