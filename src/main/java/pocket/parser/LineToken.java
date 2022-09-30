@@ -1,9 +1,11 @@
 package pocket.parser;
 
 /**
- * Line tokens will be generated during line parsing. Therefore, it does not contain
- *
+ * Line tokens will be generated during line parsing. Therefore, it does not contain the line number. The tokenizer
+ * provides line token, hence, tokenizer does not perceive the line number and other information.
  * @author James Chan
+ * @see Token
+ * @see Tokenizer
  */
 public class LineToken {
     /**
@@ -52,7 +54,7 @@ public class LineToken {
 
     /**
      * Gets the token type of this token.
-     * @return
+     * @return the token type of this token.
      */
     public TokenType getTokenType() {
         return tokenType;

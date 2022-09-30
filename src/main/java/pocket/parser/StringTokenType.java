@@ -1,7 +1,5 @@
 package pocket.parser;
 
-import java.util.regex.Pattern;
-
 /**
  * @author James Chan
  */

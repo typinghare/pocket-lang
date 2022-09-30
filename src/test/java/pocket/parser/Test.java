@@ -24,7 +24,5 @@ public class Test {
 
         lexer.parse("num = 1999 - 3 * 12 / 9", "math.poke");
         lexer.printTokenList("math.poke");
-
-        //
     }
 }

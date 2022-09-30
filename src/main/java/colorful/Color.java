@@ -1,4 +1,4 @@
-package pocket.colorful;
+package colorful;
 
 import java.util.ArrayList;
 

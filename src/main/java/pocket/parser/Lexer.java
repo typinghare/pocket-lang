@@ -2,6 +2,10 @@ package pocket.parser;
 
 import java.util.*;
 
+/**
+ * Breaks texts into tokens.
+ * @author James Chan
+ */
 public class Lexer {
     /**
      * List of token types.
@@ -9,7 +13,7 @@ public class Lexer {
     final List<TokenType> tokenTypeList;
 
     /**
-     * Mapping: label => token list
+     * Mapping rule: label => token list
      */
     final Map<String, List<Token>> tokenListMap = new HashMap<>();
 
@@ -27,7 +31,8 @@ public class Lexer {
     }
 
     /**
-     * Breaks a text into tokens.
+     * Breaks a text into tokens. It first splits the text into lines and uses tokenizer to generate line token list.
+     * Then it convert line tokens into tokens, which contain line numbers.
      * @param text  text to be parsed
      * @param label reference of the result token list
      */
@@ -51,10 +56,17 @@ public class Lexer {
         }
     }
 
-    public List<Token> getTokenList(String label) {
+    /**
+     * Get the token list of a label.
+     */
+    List<Token> getTokenList(String label) {
         return tokenListMap.get(label);
     }
 
+    /**
+     * Print the token list of a specified label. This method is JUST FOR TEST!
+     * @param label a specified label
+     */
     public void printTokenList(String label) {
         StringBuilder stringBuilder = new StringBuilder();
         for (Token token : getTokenList(label)) {

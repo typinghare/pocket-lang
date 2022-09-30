@@ -1,6 +1,6 @@
 package pocket.parser;
 
-import pocket.colorful.Color;
+import colorful.Color;
 
 /**
  * @author James Chan

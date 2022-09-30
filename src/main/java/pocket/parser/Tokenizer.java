@@ -5,7 +5,18 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Tokenizer is created by a lexer. The core function `tokenize` breaks a line string into individual line tokens. Line
+ * string means the string doesn't contain newline characters.
+ * @author James Chan
+ * @see LineToken
+ */
 public class Tokenizer {
+    /**
+     * The whitespace pattern.
+     */
+    final static Pattern whitespacePattern = Pattern.compile("\\s*");
+
     /**
      * The lexer that creates this tokenizer.
      */
@@ -20,18 +31,21 @@ public class Tokenizer {
     }
 
     /**
-     * Breaks a string into individual tokens.
-     * @return a ordered list of tokens
+     * Breaks a string into individual line tokens. How it works: Loop until the given string is empty, this tokenizer
+     * will trim the leading empty characters, and try to match token types in the `tokenTypeList` in the lexer class.
+     * Once matched, it creates a token with the matched token type and add it to a `tokenList`. Finally, the
+     * `tokenList` will be returned.
+     * @return an ordered list of tokens
+     * @throws LexicalAnalysisException if no token type is being matched during processing
      */
     List<LineToken> tokenize(String string) throws RuntimeException {
         final List<LineToken> tokenList = new ArrayList<>();
         final int length = string.length();
-        final Pattern whitespacePattern = Pattern.compile("\\s+");
         int curColumn = 1;
         String str = string;
 
         while (curColumn <= length) {
-            // clear white spaces
+            // trim whitespaces
             Matcher whitespaceMatcher = whitespacePattern.matcher(str);
             if (whitespaceMatcher.find() && whitespaceMatcher.start() == 0) {
                 int whitespaceLength = whitespaceMatcher.end();
@@ -62,10 +76,7 @@ public class Tokenizer {
             }
 
             // if match has not done, raise an exception
-            if (!matched) {
-                throw new LexicalAnalysisException(curColumn);
-            }
-//            assert matched : new LexicalAnalysisException(curColumn);
+            if (!matched) throw new LexicalAnalysisException(curColumn);
         }
 
         return tokenList;
