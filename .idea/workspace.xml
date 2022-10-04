@@ -4,20 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdf3fab3-0654-437e-b1fa-26d597293e5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/development.md" afterDir="false" />
+    <list default="true" id="fdf3fab3-0654-437e-b1fa-26d597293e5b" name="Changes" comment="initial">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/AbstractSyntaxTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/NonTerminal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/Notation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/ParseTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/ParseUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/Parser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/ParserBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/Production.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/Terminal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/TokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/exception/ProductionException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/colorful/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/colorful/Color.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/Lexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/LexicalAnalysisException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/exception/LexicalAnalysisException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/LineToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/LineToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/PatternTokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/PatternTokenType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/StringTokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/StringTokenType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/Token.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/TokenType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/Tokenizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pocket/parser/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pocket/parser/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +41,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -78,7 +91,7 @@
       <module name="pocket" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pocket.parser.*" />
+          <option name="PATTERN" value="pocket.parser.exception.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,99 +105,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="DjangoTestsConfigurationType">
-      <module name="pocket" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="pocket" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="pocket" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <module name="pocket" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="pocket" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Python.FlaskServer">
-      <module name="pocket" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="pocket" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
@@ -204,8 +124,20 @@
       <workItem from="1664395176763" duration="8247000" />
       <workItem from="1664414297138" duration="10896000" />
       <workItem from="1664473075348" duration="10818000" />
-      <workItem from="1664557009131" duration="4073000" />
+      <workItem from="1664557009131" duration="5094000" />
+      <workItem from="1664589059362" duration="703000" />
+      <workItem from="1664636971546" duration="3451000" />
+      <workItem from="1664673561583" duration="10387000" />
+      <workItem from="1664834406565" duration="9093000" />
     </task>
+    <task id="LOCAL-00001" summary="initial">
+      <created>1664562055642</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1664562055642</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +148,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="parser_v1" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -224,6 +168,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

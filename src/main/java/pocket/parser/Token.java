@@ -5,7 +5,7 @@ import colorful.Color;
 /**
  * @author James Chan
  */
-public class Token extends LineToken {
+public class Token extends LineToken implements ParseUnit {
     /**
      * The number of line the first character of this token locates.
      */

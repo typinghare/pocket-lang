@@ -2,7 +2,7 @@ package pocket.parser;
 
 /**
  * Line tokens will be generated during line parsing. Therefore, it does not contain the line number. The tokenizer
- * provides line token, hence, tokenizer does not perceive the line number and other information.
+ * provides line tokens, hence, tokenizer does not perceive line numbers and other information.
  * @author James Chan
  * @see Token
  * @see Tokenizer

@@ -4,7 +4,7 @@ package pocket.parser;
  * @author James Chan
  */
 public enum StringTokenType implements TokenType {
-    // `Newline` is special, it will not be passed to lexer
+    // `Newline` is a special token, it will not be passed to lexers
     Newline("\n"),
 
     // signs

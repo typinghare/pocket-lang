@@ -1,9 +1,11 @@
 package pocket.parser;
 
+import pocket.parser.exception.LexicalAnalysisException;
+
 import java.util.*;
 
 /**
- * Breaks texts into tokens.
+ * A lexer.
  * @author James Chan
  */
 public class Lexer {
@@ -31,12 +33,13 @@ public class Lexer {
     }
 
     /**
-     * Breaks a text into tokens. It first splits the text into lines and uses tokenizer to generate line token list.
-     * Then it convert line tokens into tokens, which contain line numbers.
+     * Breaks a text into tokens. It first splits the text into lines and uses tokenizer to generate
+     * line token list. Then it convert line tokens into tokens, which contain line numbers.
      * @param text  text to be parsed
      * @param label reference of the result token list
+     * @return the list of tokens.
      */
-    void parse(String text, String label) {
+    List<Token> parse(String text, String label) {
         final List<Token> tokenList = new ArrayList<>();
         final String[] lines = text.split("\n");
 
@@ -51,9 +54,11 @@ public class Lexer {
                 tokenList.add(new Token(StringTokenType.Newline, null, line.length(), curLine));
                 curLine++;
             } catch (LexicalAnalysisException exception) {
-                throw new LexicalAnalysisException(label, curLine, exception.column);
+                throw new LexicalAnalysisException(label, curLine, exception.getColumn());
             }
         }
+
+        return tokenList;
     }
 
     /**

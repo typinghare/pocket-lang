@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
  * @author James Chan
  */
 public enum PatternTokenType implements TokenType {
-    Int("-?[1-9][0-9]*"),
+    Int("[-+]?[1-9][0-9]*"),
     Id("[A-Za-z_$][A-Za-z0-9_$]*");
 
     /**

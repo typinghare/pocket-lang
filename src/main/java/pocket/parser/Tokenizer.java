@@ -1,5 +1,7 @@
 package pocket.parser;
 
+import pocket.parser.exception.LexicalAnalysisException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
