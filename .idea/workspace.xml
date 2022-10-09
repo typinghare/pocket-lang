@@ -15,8 +15,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloListener.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloParser.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/pocket/Hello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pocket.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/pocket.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/Statement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/colorful/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/colorful/Color.java" afterDir="false" />
     </list>
@@ -36,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -178,7 +177,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="parser_v1" />
+                        <option value="develop" />
                       </list>
                     </value>
                   </entry>
