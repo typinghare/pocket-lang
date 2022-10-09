@@ -49,8 +49,10 @@ public class Lexer {
         for (String line : lines) {
             try {
                 List<LineToken> lineTokenList = tokenizer.tokenize(line);
-                for (LineToken lineToken : lineTokenList)
+                for (LineToken lineToken : lineTokenList) {
                     tokenList.add(new Token(lineToken, curLine));
+                }
+
                 tokenList.add(new Token(StringTokenType.Newline, null, line.length(), curLine));
                 curLine++;
             } catch (LexicalAnalysisException exception) {

@@ -1,26 +1,22 @@
-package pocket.parser;
+package pocket.ast2;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * An abstract syntax tree.
- * @author James Chan
- */
 public class AbstractSyntaxTree {
-    private final Object item;
+    private final LogicUnit logicUnit;
 
     private final List<AbstractSyntaxTree> children = new ArrayList<>();
 
-    public AbstractSyntaxTree(Object item) {
-        this.item = item;
+    public AbstractSyntaxTree(LogicUnit logicUnit) {
+        this.logicUnit = logicUnit;
     }
 
     public List<AbstractSyntaxTree> getChildren() {
         return children;
     }
 
-    public Object getItem() {
-        return item;
+    public LogicUnit getLogicUnit() {
+        return logicUnit;
     }
 }

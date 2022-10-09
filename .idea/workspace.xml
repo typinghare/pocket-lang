@@ -5,20 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdf3fab3-0654-437e-b1fa-26d597293e5b" name="Changes" comment="initial">
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/Hello.g4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/Hello.interp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/Hello.tokens" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloBaseListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloLexer.interp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloLexer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloLexer.tokens" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/Hello.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/AbstractSyntaxTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/BinaryOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/BoolValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/FloatValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/IdValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/IntValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/KeywordValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/LogicUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/Operator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/StrValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/UnaryOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/Value.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketBool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketFloat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketFn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketInt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketStr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/Environment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/Symbol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/VirtualMachine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/pocket.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/pocket.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/colorful/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/colorful/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/AbstractSyntaxTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/AbstractSyntaxTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/Lexer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +43,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -119,9 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Tokenizer" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Hello" />
         <item itemvalue="Application.Hello" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.Tokenizer" />
       </list>
     </recent_temporary>
   </component>
@@ -146,6 +163,8 @@
       <workItem from="1664915600375" duration="1386000" />
       <workItem from="1664939468730" duration="757000" />
       <workItem from="1665019575367" duration="1262000" />
+      <workItem from="1665087600606" duration="10779000" />
+      <workItem from="1665353695609" duration="106000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1664562055642</created>
@@ -178,7 +197,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="parser_v1" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
