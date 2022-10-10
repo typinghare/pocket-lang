@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdf3fab3-0654-437e-b1fa-26d597293e5b" name="Changes" comment="initial">
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/Hello.g4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/Hello.interp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/Hello.tokens" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloBaseListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloLexer.interp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloLexer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloLexer.tokens" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antlr/HelloParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/Hello.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/Statement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/colorful/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/colorful/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/Statement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/Statement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="v_0_0" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -118,9 +107,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Tokenizer" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Hello" />
         <item itemvalue="Application.Hello" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.Tokenizer" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664854860522</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="initial">
+      <created>1665353869065</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665353869065</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
