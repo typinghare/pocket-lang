@@ -4,36 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdf3fab3-0654-437e-b1fa-26d597293e5b" name="Changes" comment="initial">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/AbstractSyntaxTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/BinaryOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/BoolValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/FloatValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/IdValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/IntValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/KeywordValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/LogicUnit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/Operator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/StrValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/UnaryOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast2/Value.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketBool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketFloat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketFn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketInt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/types/PocketStr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/Environment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/Symbol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/VirtualMachine.java" afterDir="false" />
+    <list default="true" id="fdf3fab3-0654-437e-b1fa-26d597293e5b" name="Changes" comment="feat: build an initial framework">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/Identifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/Type.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/AnonymousBlockFunctionExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/AnonymousFunctionExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/BinaryExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/CallExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/Expression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/IdentifierExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/IfExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/UnaryExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BinaryOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BoolOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/CompareOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/Operator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/UnaryOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/statement/AssignStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/statement/LoopStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/statement/ParameterStatement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/statement/Statement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pocket.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/pocket.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/AbstractSyntaxTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/AbstractSyntaxTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/Lexer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +36,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -137,7 +131,7 @@
         <item itemvalue="Application.Tokenizer" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Hello" />
-        <item itemvalue="Application.Hello" />
+        <item itemvalue="Application.Tokenizer" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
@@ -212,7 +206,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial" />
+    <MESSAGE value="feat: build an initial framework" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: build an initial framework" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
