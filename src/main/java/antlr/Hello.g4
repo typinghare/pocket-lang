@@ -9,12 +9,10 @@ grammar Hello;
 // start variable
 prog : (decl | expr)+ EOF;
 
-decl : ID '=' expr;
+decl : ID '=' expr ';';
 
-expr : expr '*' expr
-    | expr '+' expr
-    | expr '/' expr
-    | expr '-' expr
+expr : expr ('*' | '/') expr
+    | expr ('+' | '-') expr
     | ID
     | NUM
     | STR
@@ -28,4 +26,3 @@ NUM: '0' | (SIGN)?[1-9][0-9]*;
 DBL : (SIGN)?([1-9][0-9]* | '0')'.'[0-9]*;
 COMMENT : '//' ~[\r\n]* -> skip;
 WS : [ \t\n]+ -> skip;
-
