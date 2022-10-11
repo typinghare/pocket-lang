@@ -7,18 +7,28 @@ grammar Hello;
 }
 
 // start variable
-prog: (decl | expr)+ EOF;
+prog : (decl | expr)+ EOF;
 
-decl: ID ':' INT_TYPE '=' NUM;
-expr: expr '*' expr
+decl : ID '=' NUM
+    | ID '=' STR
+    | ID '=' DBL
+    | ID '=' ID
+    | ID '=' expr;
+expr : expr '*' expr
     | expr '+' expr
+    | expr '/' expr
+    | expr '-' expr
     | ID
-    | NUM;
+    | NUM
+    | STR
+    | DBL;
 
 /* Tokens */
-ID: [a-z][a-zA-Z0-9]*;
-NUM: '0' | ('-' | '+')?[1-9][0-9]*;
-INT_TYPE: 'INT';
-COMMENT: '--' ~[\r\n]* -> skip;
-WS: [ \t\n]+ -> skip;
+ID : [a-z][a-zA-Z0-9]*;
+STR : '"' .*? '"';
+SIGN : ('-' | '+')?;
+NUM: '0' | (SIGN)[1-9][0-9]*;
+DBL : '0.0' | (SIGN)[1-9][0-9]*'.'[0-9]*;
+COMMENT : '//' ~[\r\n]* -> skip;
+WS : [ \t\n]+ -> skip;
 
