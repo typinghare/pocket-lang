@@ -1,6 +1,6 @@
 package pocket.ast.operator;
 
-public enum CompareOperator implements Operator {
+public enum CompareOp implements Op {
     Equal,
     NotEqual,
     LessThan,

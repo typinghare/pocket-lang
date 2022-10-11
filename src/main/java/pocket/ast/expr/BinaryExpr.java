@@ -1,24 +1,24 @@
-package pocket.ast.expression;
+package pocket.ast.expr;
 
-import pocket.ast.operator.Operator;
+import pocket.ast.operator.BinaryOp;
 
 /**
  * A binary expression contains two operands separated by one operator.
  * @author James Chan
  */
-public class BinaryExpression extends Expression {
+public class BinaryExpr extends Expr {
     /**
      * Operator.
      */
-    Operator operator;
+    private BinaryOp operator;
 
     /**
      * Left operand.
      */
-    Expression left;
+    private Expr left;
 
     /**
      * Right operand.
      */
-    Expression right;
+    private Expr right;
 }

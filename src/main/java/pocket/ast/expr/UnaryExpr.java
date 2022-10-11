@@ -1,19 +1,19 @@
-package pocket.ast.expression;
+package pocket.ast.expr;
 
-import pocket.ast.operator.Operator;
+import pocket.ast.operator.Op;
 
 /**
  * A unary expression contains one operand and a unary operator.
  * @author James Chan
  */
-public class UnaryExpression extends Expression {
+public class UnaryExpr extends Expr {
     /**
      * Operator.
      */
-    Operator operator;
+    private Op operator;
 
     /**
      * Operand.
      */
-    Expression operand;
+    private Expr operand;
 }

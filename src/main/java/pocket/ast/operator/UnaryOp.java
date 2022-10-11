@@ -1,5 +1,5 @@
 package pocket.ast.operator;
 
-public enum UnaryOperator implements Operator {
+public enum UnaryOp implements Op {
     Not, Invert;
 }

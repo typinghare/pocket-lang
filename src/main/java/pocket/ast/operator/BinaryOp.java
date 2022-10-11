@@ -1,6 +1,6 @@
 package pocket.ast.operator;
 
-public enum BinaryOperator implements Operator {
+public enum BinaryOp implements Op {
     Plus,
     Minus,
     Multiply,

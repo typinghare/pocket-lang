@@ -17,6 +17,35 @@ Implement the **function module(partial)**, **assignment module**, and **calcula
 }
 ~~~
 
+### Case 1
+
+~~~javascript
+{
+  Console.print(5 + 6);
+}
+~~~
+
+#### Tokens
+
+~~~
+<{> <Id, Console> <.> <Id, print> <(> <Int, 5> <+> <Int, 6> <)> <}>
+~~~
+
+#### C
+
+~~~
+// TODO
+~~~
+
+#### AST
+
+~~~
+
+~~~
+
+### Case 2
+
 ## v 0.2.0
 
 PENDING...
+

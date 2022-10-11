@@ -5,28 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdf3fab3-0654-437e-b1fa-26d597293e5b" name="Changes" comment="feat: build an initial framework">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/Identifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/AnonymousBlockFunctionExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/AnonymousFunctionExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/BinaryExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/CallExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/Expression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/IdentifierExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/IfExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/UnaryExpression.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BinaryOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BoolOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/CompareOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/Operator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/UnaryOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/statement/AssignStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/statement/LoopStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/statement/ParameterStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/statement/Statement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/idea.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/AttributeExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BlockFnExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/CallExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/IdExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/ExpressionStatement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/development.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/development.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/Identifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/AnonymousBlockFunctionExpression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/AnonymousFunctionExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/FnExpr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/BinaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BinaryExpr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/CallExpression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/Expr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/IdentifierExpression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/IfExpression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expression/UnaryExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/UnaryExpr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BinaryOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BinaryOp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BoolOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BoolOp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/CompareOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/CompareOp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/Op.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/UnaryOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/UnaryOp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/statement/AssignStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/AssignStmt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/statement/LoopStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/LoopStmt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/statement/ParameterStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/statement/Statement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/Stmt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +163,8 @@
       <workItem from="1665019575367" duration="1262000" />
       <workItem from="1665087600606" duration="10779000" />
       <workItem from="1665353695609" duration="106000" />
+      <workItem from="1665459664626" duration="1610000" />
+      <workItem from="1665511642297" duration="2461000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1664562055642</created>
@@ -174,7 +180,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664854860522</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: build an initial framework">
+      <created>1665431673106</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665431673106</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: build an initial framework">
+      <created>1665431685614</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665431685614</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,19 +205,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
