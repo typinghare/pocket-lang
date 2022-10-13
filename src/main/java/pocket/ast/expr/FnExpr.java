@@ -7,6 +7,8 @@ import java.util.List;
  * @author James Chan
  * @example (Int a, Int b) { if (a > b) return a; else return b; }
  */
-public class FnExpr extends BlockFnExpr {
-    private List<Expr> parameterStatementList;
+public class FnExpr extends Expr {
+    private List<AttrExpr> parameterTypeList;
+
+    private List<IdExpr> idExprList;
 }

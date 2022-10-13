@@ -70,7 +70,8 @@ public class Parser {
 
         // TODO: implement AST parser
 
-        return new AbstractSyntaxTree();
+//        return new AbstractSyntaxTree();
+        return null;
     }
 
     /**

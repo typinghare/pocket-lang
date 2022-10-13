@@ -23,7 +23,7 @@ public class Environment {
     }
 
     /**
-     * Declare a variable
+     * Declare a variable.
      * @param name   the name (or identifier) of the variable
      * @param symbol the corresponding symbol
      */

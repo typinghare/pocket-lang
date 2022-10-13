@@ -10,3 +10,13 @@ This project is written in [Java17 LTS](https://docs.oracle.com/en/java/javase/1
 
 ## Git
 
+## Abbreviation
+
+| Full name            | Abbreviation/acronym | Description |
+| -------------------- | -------------------- | ----------- |
+| expression           | expr                 |             |
+| statement            | stmt                 |             |
+| attribute            | attr                 |             |
+| concrete syntax tree | CST                  |             |
+| abstract syntax tree | AST                  |             |
+
