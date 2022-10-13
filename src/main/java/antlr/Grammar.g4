@@ -1,5 +1,3 @@
-// Define a grammar called Hello
-
 grammar Grammar;
 
 @header {
