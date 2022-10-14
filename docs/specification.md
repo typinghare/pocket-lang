@@ -19,4 +19,6 @@ This project is written in [Java17 LTS](https://docs.oracle.com/en/java/javase/1
 | attribute            | attr                 |             |
 | concrete syntax tree | CST                  |             |
 | abstract syntax tree | AST                  |             |
+| return               | rtn                  |             |
+| Declaration          | decl                 |             |
 

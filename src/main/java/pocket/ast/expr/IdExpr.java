@@ -10,7 +10,7 @@ public class IdExpr extends Expr {
         this.lexeme = lexeme;
     }
 
-    public String getValue() {
+    public String getLexeme() {
         return lexeme;
     }
 }

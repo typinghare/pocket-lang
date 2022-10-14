@@ -1,14 +1,12 @@
 package pocket.parser;
 
 import org.junit.Test;
-import org.w3c.dom.Attr;
 import pocket.ast.Ast;
 import pocket.ast.expr.*;
 import pocket.ast.stmt.AssignStmt;
 import pocket.ast.stmt.ExprStmt;
 import pocket.ast.type.IntType;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class AstTestCase {
@@ -18,6 +16,7 @@ public class AstTestCase {
     }
 
     /**
+     * Construct an AST and print it out.
      * @example { Int a = 1; Console.print(a); }
      */
     @Test
@@ -36,10 +35,10 @@ public class AstTestCase {
         final BlockFnExpr outermostBlockFnExpr = new BlockFnExpr(List.of(assignStmt, exprStmt));
         final ExprStmt outermostStmt = new ExprStmt(outermostBlockFnExpr);
 
-        // create ast
+        // create an ast
         final Ast ast = new Ast(outermostStmt);
 
-        // print ast
-        System.out.println(ast);
+        // print the ast (will generate an HTML file and open it on the default browser)
+        ast.print();
     }
 }

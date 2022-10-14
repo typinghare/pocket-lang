@@ -5,47 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdf3fab3-0654-437e-b1fa-26d597293e5b" name="Changes" comment="feat: build an initial framework">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/Ast.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BoolExpr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/TypeExpr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/IfStmt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/BoolType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/FloatType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/FnType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/IntType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/StrType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pocket/parser/AstTestCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/twig/LambdaWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/twig/PropertyFetcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/twig/TreePrinter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/twig/template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/specification.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/specification.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/AttributeExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/AttrExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BlockFnExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BlockFnExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/CallExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/CallExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/FnExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/FnExpr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/Hello.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/Ast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/Ast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/AttrExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/AttrExpr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/IdExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/IdExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BinaryOp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BinaryOp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BoolOp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BoolOp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/CompareOp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/CompareOp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/UnaryOp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/UnaryOp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/AssignStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/AssignStmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/ExpressionStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/ExprStmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/LoopStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/LoopStmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast2/AbstractSyntaxTree.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast2/BinaryOperator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast2/BoolValue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast2/FloatValue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast2/IdValue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast2/IntValue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast2/KeywordValue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast2/LogicUnit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast2/Operator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast2/StrValue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast2/UnaryOperator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast2/Value.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/Environment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/VirtualMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/VirtualMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/IfStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/IfStmt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pocket/parser/AstTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pocket/parser/AstTestCase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,25 +86,12 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.AstTestCase.constructAST">
-    <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pocket.Hello" />
+    <configuration name="AstTestCase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pocket.parser.AstTestCase" />
       <module name="pocket" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pocket.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pocket.parser.Test" />
-      <module name="pocket" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pocket.parser.exception.*" />
+          <option name="PATTERN" value="pocket.parser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -161,6 +122,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AstTestCase.helloWord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pocket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pocket.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pocket.parser" />
+      <option name="MAIN_CLASS_NAME" value="pocket.parser.AstTestCase" />
+      <option name="METHOD_NAME" value="helloWord" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AstTestCase.helloWordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pocket" />
       <extension name="coverage">
@@ -180,10 +157,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AstTestCase.constructAST" />
+        <item itemvalue="Application.AstTestCase" />
+        <item itemvalue="JUnit.AstTestCase.helloWord" />
         <item itemvalue="JUnit.AstTestCase.helloWordTest" />
         <item itemvalue="Application.Tokenizer" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.Hello" />
       </list>
     </recent_temporary>
   </component>
@@ -214,7 +191,8 @@
       <workItem from="1665511642297" duration="3279000" />
       <workItem from="1665589179532" duration="2616000" />
       <workItem from="1665630898690" duration="3302000" />
-      <workItem from="1665691199861" duration="1361000" />
+      <workItem from="1665691199861" duration="1758000" />
+      <workItem from="1665714260290" duration="18907000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1664562055642</created>
@@ -251,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665518799867</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: build an initial framework">
+      <created>1665695688817</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665695688817</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

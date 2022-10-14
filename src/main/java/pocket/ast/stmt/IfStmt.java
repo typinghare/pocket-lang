@@ -8,7 +8,7 @@ import java.util.List;
  * If statement.
  * @author James Chan
  */
-public class IfStmt {
+public class IfStmt extends Stmt {
     private BoolExpr boolExpr;
 
     private List<Stmt> stmtList;

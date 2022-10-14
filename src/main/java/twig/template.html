@@ -1,0 +1,239 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <title>{{ name }}</title>
+
+    <style>
+        :root {
+            --tree-object-name-color: #219ebc;
+            --tree-object-toggle-open-color: green;
+            --tree-object-toggle-close-color: red;
+            --tree-brace-color: #999;
+            --tree-property-left-padding: 2em;
+            --tree-property-key-color: #fb8500;
+            --tree-property-colon-color: #999;
+            --tree-property-colon-margin-right: 0.5em;
+            --tree-value-color: #8338ec;
+            --tree-property-comma-color: #999;
+        }
+
+        body {
+            background-color: #f6f6f6;
+            font-size: 14px;
+            font-family: "menlo", "Consolas", "sans-serif";
+        }
+
+        .container {
+            margin-top: 2em;
+            margin-left: 15%;
+            width: 70%;
+        }
+
+        .tree-object-name {
+            color: var(--tree-object-name-color);
+            cursor: pointer;
+        }
+
+        .tree-object-name:hover {
+            text-decoration: underline;
+            text-underline: var(--tree-object-name-color);
+        }
+
+        .tree-object-toggle-open {
+            margin: 0 0.2em 0 0.4em;
+            color: var(--tree-object-toggle-open-color);
+        }
+
+        .tree-object-toggle-close {
+            margin: 0 0.2em 0 0.4em;
+            color: var(--tree-object-toggle-close-color);
+        }
+
+        .tree-brace {
+            color: var(--tree-brace-color);
+        }
+
+        .tree-property {
+            padding-left: var(--tree-property-left-padding);
+        }
+
+        .tree-property-key {
+            color: var(--tree-property-key-color);
+        }
+
+        .tree-property-colon {
+            color: var(--tree-property-colon-color);
+            margin-right: var(--tree-property-colon-margin-right);
+        }
+
+        .tree-list-toggle-open {
+            margin: 0 0.2em 0 0;
+            color: var(--tree-object-toggle-open-color);
+        }
+
+        .tree-list-toggle-close {
+            margin: 0 0.2em 0 0;
+            color: var(--tree-object-toggle-close-color);
+        }
+
+        .tree-value {
+            color: var(--tree-value-color);
+        }
+
+        .tree-property-comma {
+            color: var(--tree-property-comma-color)
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>{{ name }}</h1>
+    <hr />
+
+    <!-- root -->
+    <div id="tree-root"></div>
+</div>
+
+<script>
+    /**
+     * Creates an HTML document.
+     * @returns {HTMLElement}
+     */
+    function element(tagName, innerHTML = '', _class = '') {
+        const e = document.createElement(tagName);
+        e.innerHTML = innerHTML;
+        if (Array.isArray(_class)) {
+            for (const cls of _class) e.classList.add(cls);
+        } else if (typeof _class == "string" && _class !== "") {
+            e.classList.add(_class);
+        }
+
+        return e;
+    }
+
+    /**
+     * Creates an empty HTML document.
+     * @returns {HTMLElement}
+     */
+    function emptyElement(tagName, _class = '') {
+        return element(tagName, '', _class);
+    }
+
+    const Type = {
+        OBJECT: Symbol('OBJECT'),
+        LIST: Symbol('LIST'),
+        ID_OR_TYPE: Symbol('ID_OR_TYPE')
+    }
+
+    function renderObjectNode($parent, objectNode) {
+        const name = objectNode['$name$'];
+
+        const $name = element('span', name, 'tree-object-name');
+        const $toggle = element('span', '+', 'tree-object-toggle-open');
+        const $leftBrace = element('span', '&nbsp;{', 'tree-brace');
+        const $propertyContainer = emptyElement('div', 'property-container');
+        const $rightBrace = element('span', '}', 'tree-brace');
+
+        $parent.append($name);
+        $parent.append($toggle);
+        $parent.append($leftBrace)
+        $parent.append($propertyContainer);
+        $parent.append($rightBrace);
+
+        renderObject($propertyContainer, objectNode);
+    }
+
+    function renderListNode($parent, listNode) {
+        const $leftBracket = element('span', '&nbsp;[', 'tree-brace');
+        const $toggle = element('span', '+', 'tree-object-toggle-open');
+        const $listContainer = emptyElement('div', 'tree-property-container');
+        const $rightBracket = element('span', ']', 'tree-brace');
+
+        $parent.append($toggle)
+        $parent.append($leftBracket)
+        $parent.append($listContainer);
+        $parent.append($rightBracket);
+
+        renderList($listContainer, listNode);
+    }
+
+    function renderPropertyNode($parent, propertyName, value) {
+    }
+
+    function renderObject($propertyContainer, object) {
+        for (const propertyKey in object) {
+            if (!object.hasOwnProperty(propertyKey) || propertyKey === '$name$')
+                continue;
+
+            const value = object[propertyKey];
+            const type = getValueType(value);
+            const $property = emptyElement('div', 'tree-property');
+            const $propertyKey = element('span', propertyKey, 'tree-property-key');
+            const $colon = element('span', ':', 'tree-property-colon')
+
+            $propertyContainer.append($property);
+            $property.append($propertyKey);
+            $property.append($colon);
+
+            renderValue($property, value, type);
+            $property.append(element('span', ',', 'tree-property-comma'));
+            $property.append(element('br'));
+        }
+    }
+
+    function renderList($listContainer, list) {
+        const $list = emptyElement('div', 'tree-property');
+        $listContainer.append($list);
+
+        for (const item of list) {
+            const type = getValueType(item);
+            renderValue($list, item, type);
+            $list.append(element('span', ',', 'tree-property-comma'));
+            $list.append(element('br'));
+        }
+    }
+
+    /**
+     * @param value
+     * @returns {Symbol}
+     */
+    function getValueType(value) {
+        if (Array.isArray(value)) return Type.LIST;
+        if (typeof value == 'object') return Type.OBJECT;
+        else return Type.ID_OR_TYPE;
+    }
+
+    function renderValue($parent, value, type) {
+        if (type === Type.OBJECT) {
+            renderObjectNode($parent, value);
+        } else if (type === Type.LIST) {
+            renderListNode($parent, value);
+        } else if (type === Type.ID_OR_TYPE) {
+            const $value = element('span', value.toString(), 'tree-value');
+            $parent.append($value);
+        }
+    }
+
+    const jsonString = '{{ jsonString }}';
+
+    let treeObject = null;
+    try {
+        treeObject = JSON.parse(jsonString);
+    } catch (e) {
+        console.log("Fetal error encountered when parsing json string.");
+        console.error(e.stack());
+    }
+
+    console.log(treeObject);
+
+    if (treeObject != null) {
+        renderObjectNode(document.getElementById('tree-root'), treeObject);
+    }
+</script>
+
+</body>
+</html>

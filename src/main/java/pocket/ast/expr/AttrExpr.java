@@ -9,18 +9,18 @@ package pocket.ast.expr;
 public class AttrExpr extends Expr {
     private final Expr value;
 
-    private final String attribute;
+    private final String attr;
 
     public AttrExpr(Expr value, String attribute) {
         this.value = value;
-        this.attribute = attribute;
+        this.attr = attribute;
     }
 
     public Expr getValue() {
         return value;
     }
 
-    public String getAttribute() {
-        return attribute;
+    public String getAttr() {
+        return attr;
     }
 }

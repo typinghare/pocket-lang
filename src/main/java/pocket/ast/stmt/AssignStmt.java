@@ -14,25 +14,25 @@ import java.util.List;
 public class AssignStmt extends Stmt {
     private final Expr type;
 
-    private final List<Expr> target;
+    private final List<Expr> targetList;
 
-    private final List<Expr> value;
+    private final List<Expr> valueList;
 
-    public AssignStmt(Expr type, List<Expr> target, List<Expr> value) {
+    public AssignStmt(Expr type, List<Expr> targetList, List<Expr> valueList) {
         this.type = type;
-        this.target = target;
-        this.value = value;
+        this.targetList = targetList;
+        this.valueList = valueList;
     }
 
     public Expr getType() {
         return type;
     }
 
-    public List<Expr> getTarget() {
-        return target;
+    public List<Expr> getTargetList() {
+        return targetList;
     }
 
-    public List<Expr> getValue() {
-        return value;
+    public List<Expr> getValueList() {
+        return valueList;
     }
 }
