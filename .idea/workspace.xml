@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdf3fab3-0654-437e-b1fa-26d597293e5b" name="Changes" comment="feat: build an initial framework">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/twig/LambdaWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/twig/PropertyFetcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/twig/TreePrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/twig/template.html" afterDir="false" />
+    <list default="true" id="fdf3fab3-0654-437e-b1fa-26d597293e5b" name="Changes" comment="feat: 'twig' package (for printing a tree)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/specification.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/specification.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/Hello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/Ast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/Ast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/AttrExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/AttrExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/IdExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/IdExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/AssignStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/AssignStmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/IfStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/IfStmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pocket/parser/AstTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pocket/parser/AstTestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/twig/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/twig/template.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +179,7 @@
       <workItem from="1665589179532" duration="2616000" />
       <workItem from="1665630898690" duration="3302000" />
       <workItem from="1665691199861" duration="1758000" />
-      <workItem from="1665714260290" duration="18907000" />
+      <workItem from="1665714260290" duration="22896000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1664562055642</created>
@@ -236,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665695688817</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: 'twig' package (for printing a tree)">
+      <created>1665772644724</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1665772644724</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +263,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial" />
     <MESSAGE value="feat: build an initial framework" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: build an initial framework" />
+    <MESSAGE value="feat: 'twig' package (for printing a tree)" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 'twig' package (for printing a tree)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

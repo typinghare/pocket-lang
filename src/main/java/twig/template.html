@@ -8,9 +8,9 @@
 
     <style>
         :root {
-            --tree-object-name-color: #219ebc;
-            --tree-object-toggle-open-color: green;
-            --tree-object-toggle-close-color: red;
+            --tree-object-name-color: #118ab2;
+            --tree-object-toggle-open-color: #38a3a5;
+            --tree-object-toggle-close-color: #ef476f;
             --tree-brace-color: #999;
             --tree-property-left-padding: 2em;
             --tree-property-key-color: #fb8500;
@@ -34,12 +34,14 @@
 
         .tree-object-name {
             color: var(--tree-object-name-color);
-            cursor: pointer;
         }
 
-        .tree-object-name:hover {
+        .tree-hover-underline:hover {
             text-decoration: underline;
-            text-underline: var(--tree-object-name-color);
+        }
+
+        .tree-hover-underline:hover {
+            cursor: pointer;
         }
 
         .tree-object-toggle-open {
@@ -54,6 +56,10 @@
 
         .tree-brace {
             color: var(--tree-brace-color);
+        }
+
+        .tree-container-hidden {
+            display: none;
         }
 
         .tree-property {
@@ -92,7 +98,8 @@
 
 <div class="container">
     <h1>{{ name }}</h1>
-    <hr />
+    <hr/>
+    <br/>
 
     <!-- root -->
     <div id="tree-root"></div>
@@ -132,10 +139,10 @@
     function renderObjectNode($parent, objectNode) {
         const name = objectNode['$name$'];
 
-        const $name = element('span', name, 'tree-object-name');
+        const $name = element('span', name, ['tree-object-name', 'tree-hover-underline']);
         const $toggle = element('span', '+', 'tree-object-toggle-open');
         const $leftBrace = element('span', '&nbsp;{', 'tree-brace');
-        const $propertyContainer = emptyElement('div', 'property-container');
+        const $propertyContainer = emptyElement('div', 'tree-property-container');
         const $rightBrace = element('span', '}', 'tree-brace');
 
         $parent.append($name);
@@ -144,10 +151,41 @@
         $parent.append($propertyContainer);
         $parent.append($rightBrace);
 
+        $name.addEventListener('click', () => {
+            // find the toggle span
+            let $toggle = null;
+            for (let $child of $name.parentElement.children) {
+                if ($child.classList.contains('tree-object-toggle-open') || $child.classList.contains('tree-object-toggle-close')) {
+                    $toggle = $child;
+                    break;
+                }
+            }
+
+            for (let $child of $name.parentElement.children) {
+                if ($child.tagName.startsWith('DIV') && $child.classList.contains('tree-property-container')) {
+                    if ($child.classList.contains('tree-container-hidden')) {
+                        $child.classList.remove('tree-container-hidden');
+                        if ($toggle != null) {
+                            $toggle.classList.remove('tree-object-toggle-close');
+                            $toggle.classList.add('tree-object-toggle-open');
+                            $toggle.innerHTML = '+';
+                        }
+                    } else {
+                        $child.classList.add("tree-container-hidden");
+                        if ($toggle != null) {
+                            $toggle.classList.remove('tree-object-toggle-open');
+                            $toggle.classList.add('tree-object-toggle-close');
+                            $toggle.innerHTML = '-';
+                        }
+                    }
+                }
+            }
+        });
+
         renderObject($propertyContainer, objectNode);
     }
 
-    function renderListNode($parent, listNode) {
+    function renderListNode($parent, listNode, $name) {
         const $leftBracket = element('span', '&nbsp;[', 'tree-brace');
         const $toggle = element('span', '+', 'tree-object-toggle-open');
         const $listContainer = emptyElement('div', 'tree-property-container');
@@ -159,9 +197,39 @@
         $parent.append($rightBracket);
 
         renderList($listContainer, listNode);
-    }
 
-    function renderPropertyNode($parent, propertyName, value) {
+        $name.classList.add('tree-hover-underline')
+        $name.addEventListener('click', () => {
+            // find the toggle span
+            let $toggle = null;
+            for (let $child of $name.parentElement.children) {
+                if ($child.classList.contains('tree-object-toggle-open') || $child.classList.contains('tree-object-toggle-close')) {
+                    $toggle = $child;
+                    break;
+                }
+            }
+
+            console.log($name);
+            for (let $child of $name.parentElement.children) {
+                if ($child.tagName.startsWith('DIV') && $child.classList.contains('tree-property-container')) {
+                    if ($child.classList.contains('tree-container-hidden')) {
+                        $child.classList.remove('tree-container-hidden');
+                        if ($toggle != null) {
+                            $toggle.classList.remove('tree-object-toggle-close');
+                            $toggle.classList.add('tree-object-toggle-open');
+                            $toggle.innerHTML = '+';
+                        }
+                    } else {
+                        $child.classList.add("tree-container-hidden");
+                        if ($toggle != null) {
+                            $toggle.classList.remove('tree-object-toggle-open');
+                            $toggle.classList.add('tree-object-toggle-close');
+                            $toggle.innerHTML = '-';
+                        }
+                    }
+                }
+            }
+        })
     }
 
     function renderObject($propertyContainer, object) {
@@ -179,17 +247,16 @@
             $property.append($propertyKey);
             $property.append($colon);
 
-            renderValue($property, value, type);
+            renderValue($property, value, type, $propertyKey);
             $property.append(element('span', ',', 'tree-property-comma'));
-            $property.append(element('br'));
         }
     }
 
     function renderList($listContainer, list) {
-        const $list = emptyElement('div', 'tree-property');
-        $listContainer.append($list);
-
         for (const item of list) {
+            const $list = emptyElement('div', 'tree-property');
+            $listContainer.append($list);
+
             const type = getValueType(item);
             renderValue($list, item, type);
             $list.append(element('span', ',', 'tree-property-comma'));
@@ -207,18 +274,20 @@
         else return Type.ID_OR_TYPE;
     }
 
-    function renderValue($parent, value, type) {
+    function renderValue($parent, value, type, $name = null) {
         if (type === Type.OBJECT) {
             renderObjectNode($parent, value);
         } else if (type === Type.LIST) {
-            renderListNode($parent, value);
+            renderListNode($parent, value, $name);
         } else if (type === Type.ID_OR_TYPE) {
             const $value = element('span', value.toString(), 'tree-value');
             $parent.append($value);
         }
     }
 
-    const jsonString = '{{ jsonString }}';
+    // const jsonString = '{{ jsonString }}';
+    const jsonString = '{"expr":{"stmtList":[{"targetList":["Id(a)"],"valueList":["Type(1)"],"type":"Id(Int)","$name$":"AssignStmt"},{"expr":{"ExprList":["Id(a)"],"$name$":"CallExpr"},"$name$":"ExprStmt"}],"$name$":"BlockFnExpr"},"$name$":"ExprStmt"}'
+    console.log(jsonString)
 
     let treeObject = null;
     try {
@@ -232,6 +301,18 @@
 
     if (treeObject != null) {
         renderObjectNode(document.getElementById('tree-root'), treeObject);
+
+        setTimeout(() => {
+            const collection = document.getElementsByClassName('tree-object-name')
+            console.log(collection.length)
+            for (const element of collection) {
+                element.addEventListener('Mouse', () => {
+                    console.log(element)
+                    console.log("Click");
+                });
+            }
+        }, 1000);
+
     }
 </script>
 
