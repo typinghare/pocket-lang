@@ -1,4 +1,4 @@
-package pocket.types;
+package pocket.vm.type;
 
 import java.util.ArrayList;
 import java.util.List;

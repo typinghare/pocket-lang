@@ -12,13 +12,13 @@ This project is written in [Java17 LTS](https://docs.oracle.com/en/java/javase/1
 
 ## Abbreviation
 
-| Full name            | Abbreviation/acronym | Description |
-| -------------------- | -------------------- | ----------- |
-| expression           | expr                 |             |
-| statement            | stmt                 |             |
-| attribute            | attr                 |             |
-| concrete syntax tree | CST                  |             |
-| abstract syntax tree | AST                  |             |
-| return               | rtn                  |             |
-| Declaration          | decl                 |             |
+| Full name            | Abbreviation/acronym | Comment                              |
+| -------------------- | -------------------- | ------------------------------------ |
+| expression           | expr                 |                                      |
+| statement            | stmt                 |                                      |
+| attribute            | attr                 |                                      |
+| concrete syntax tree | CST                  |                                      |
+| abstract syntax tree | AST                  |                                      |
+| return               | rtn                  |                                      |
+| declaration          | decl                 | The "declarator" should not use this |
 

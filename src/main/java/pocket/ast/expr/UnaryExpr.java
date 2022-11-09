@@ -10,10 +10,23 @@ public class UnaryExpr extends Expr {
     /**
      * Operator.
      */
-    private Op operator;
+    private final Op operator;
 
     /**
      * Operand.
      */
-    private Expr operand;
+    private final Expr operand;
+
+    public UnaryExpr(Op operator, Expr operand) {
+        this.operator = operator;
+        this.operand = operand;
+    }
+
+    public Op getOperator() {
+        return operator;
+    }
+
+    public Expr getOperand() {
+        return operand;
+    }
 }

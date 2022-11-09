@@ -36,6 +36,7 @@ public class TreePrinter<T> {
     public void print(T root) {
         Map<String, Object> propertyMap = propertyFetcher.lambda.fetch(root);
         String jsonString = gson.toJson(propertyMap);
+        System.out.println(jsonString);
 
         String templatePath = getPackageDir() + "/template.html";
         String outputPath = getTargetPackageDir() + "/index.html";

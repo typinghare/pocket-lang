@@ -5,7 +5,7 @@ package pocket.ast.type;
  * @author James Chan
  */
 public class StrType extends Type {
-    public StrType(String lexeme) {
-        super(lexeme);
+    public StrType(String literal) {
+        super(literal);
     }
 }

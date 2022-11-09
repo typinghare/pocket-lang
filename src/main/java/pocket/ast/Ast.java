@@ -3,8 +3,8 @@ package pocket.ast;
 import pocket.ast.expr.*;
 import pocket.ast.stmt.AssignStmt;
 import pocket.ast.stmt.ExprStmt;
-import pocket.ast.stmt.IfStmt;
 import pocket.ast.stmt.Stmt;
+import pocket.ast.type.NullType;
 import pocket.ast.type.Type;
 import twig.LambdaWrapper;
 import twig.PropertyFetcher;
@@ -22,32 +22,55 @@ public class Ast {
         this.root = root;
     }
 
+    /**
+     * Returns the root statement.
+     * @return the root statement
+     */
+    public Stmt getRootStmt() {
+        return root;
+    }
+
     @Override
     public String toString() {
         return root.toString();
     }
 
     public void print() {
-        LambdaWrapper<PropertyFetcher<Node>> propertyFetcher = new LambdaWrapper<>();
+        final LambdaWrapper<PropertyFetcher<Node>> propertyFetcher = new LambdaWrapper<>();
 
-        final Function<Expr, Object> exprProcessor = (Expr expr) -> {
+        final Function<Expr, Object> exprProcessor = (final Expr expr) -> {
             if (expr instanceof IdExpr) {
-                return String.format("Id(%s)", ((IdExpr) expr).getLexeme());
+                return String.format("Id(\\\"%s\\\")", ((IdExpr) expr).getLexeme());
             } else if (expr instanceof TypeExpr) {
-                return String.format("Type(%s)", ((TypeExpr) expr).getType().getLexeme());
+                final Type type = ((TypeExpr) expr).getType();
+                if (type instanceof NullType) {
+                    return "NullType()";
+                } else {
+                    return String.format(
+                            "%s(%s)",
+                            type.getClass().getSimpleName(),
+                            type.getLiteral()
+                    );
+                }
             } else {
                 return propertyFetcher.lambda.fetch(expr);
             }
         };
 
         propertyFetcher.lambda = (node) -> {
-            HashMap<String, Object> propertyMap = new HashMap<>();
+            if (node == null) {
+                return null;
+            }
+
+            final HashMap<String, Object> propertyMap = new HashMap<>();
             propertyMap.put(TreePrinter.NAME, node.getClass().getSimpleName());
 
             if (node instanceof AttrExpr) {
-                Expr expr = ((AttrExpr) node).getValue();
-                propertyMap.put("value", exprProcessor.apply(expr));
-                propertyMap.put("attr", ((AttrExpr) node).getAttr());
+                Expr targetExpr = ((AttrExpr) node).getTarget();
+                IdExpr attrExpr = ((AttrExpr) node).getAttr();
+
+                propertyMap.put("value", exprProcessor.apply(targetExpr));
+                propertyMap.put("attr", exprProcessor.apply(attrExpr));
             }
 
             if (node instanceof BlockFnExpr) {
@@ -59,24 +82,26 @@ public class Ast {
             }
 
             if (node instanceof CallExpr) {
-                List<Expr> argumentList = ((CallExpr) node).getArgumentList();
-                List<Object> exprList = new ArrayList<>();
-                for (Expr argument : argumentList)
+                final Expr targetExpr = ((CallExpr) node).getTarget();
+                final List<Object> exprList = new ArrayList<>();
+
+                for (Expr argument : ((CallExpr) node).getArgList())
                     exprList.add(exprProcessor.apply(argument));
-                propertyMap.put("ExprList", exprList);
+
+                propertyMap.put("target", exprProcessor.apply(targetExpr));
+                propertyMap.put("argumentList", exprList);
             }
 
             if (node instanceof AssignStmt) {
-                Expr type = ((AssignStmt) node).getType();
-                List<Expr> targetList = ((AssignStmt) node).getTargetList();
-                List<Expr> valueList = ((AssignStmt) node).getValueList();
+                final Expr type = ((AssignStmt) node).getType();
 
                 List<Object> targetListEx = new ArrayList<>();
                 List<Object> valueListEx = new ArrayList<>();
-                for (Expr target : targetList)
+                for (Expr target : ((AssignStmt) node).getTargetList())
                     targetListEx.add(exprProcessor.apply(target));
-                for (Expr value : valueList)
+                for (Expr value : ((AssignStmt) node).getValueList()) {
                     valueListEx.add(exprProcessor.apply(value));
+                }
 
                 propertyMap.put("type", exprProcessor.apply(type));
                 propertyMap.put("targetList", targetListEx);
@@ -84,14 +109,19 @@ public class Ast {
             }
 
             if (node instanceof ExprStmt) {
-                Expr expr = ((ExprStmt) node).getExpr();
+                final Expr expr = ((ExprStmt) node).getExpr();
                 propertyMap.put("expr", exprProcessor.apply(expr));
+            }
+
+            if (node instanceof BinaryExpr) {
+                propertyMap.put("operator", ((BinaryExpr) node).getOperator().toString());
+                propertyMap.put("left", exprProcessor.apply(((BinaryExpr) node).getLeft()));
+                propertyMap.put("right", exprProcessor.apply(((BinaryExpr) node).getRight()));
             }
 
             return propertyMap;
         };
 
-        TreePrinter<Node> treePrinter = new TreePrinter<>("AST", propertyFetcher);
-        treePrinter.print(root);
+        new TreePrinter<>("AST", propertyFetcher).print(root);
     }
 }

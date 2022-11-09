@@ -5,7 +5,7 @@ package pocket.ast.type;
  * @author James Chan
  */
 public class IntType extends Type {
-    public IntType(String lexeme) {
-        super(lexeme);
+    public IntType(String literal) {
+        super(literal);
     }
 }

@@ -2,17 +2,20 @@ package pocket.ast.type;
 
 import pocket.ast.Node;
 
+/**
+ * Literal container.
+ */
 public abstract class Type extends Node {
     /**
      * The lexeme of this type.
      */
-    protected String lexeme;
+    protected final String literal;
 
-    public Type(String lexeme) {
-        this.lexeme = lexeme;
+    public Type(String literal) {
+        this.literal = literal;
     }
 
-    public String getLexeme() {
-        return lexeme;
+    public String getLiteral() {
+        return literal;
     }
 }

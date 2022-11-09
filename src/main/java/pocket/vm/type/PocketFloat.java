@@ -1,4 +1,4 @@
-package pocket.types;
+package pocket.vm.type;
 
 public class PocketFloat extends PocketNumber {
     protected Float value;

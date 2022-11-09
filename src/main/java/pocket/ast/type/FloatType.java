@@ -5,7 +5,7 @@ package pocket.ast.type;
  * @author James Chan
  */
 public class FloatType extends Type{
-    public FloatType(String lexeme) {
-        super(lexeme);
+    public FloatType(String literal) {
+        super(literal);
     }
 }

@@ -7,20 +7,20 @@ package pocket.ast.expr;
  * @example this.userService.getId
  */
 public class AttrExpr extends Expr {
-    private final Expr value;
+    private final Expr target;
 
-    private final String attr;
+    private final IdExpr attr;
 
-    public AttrExpr(Expr value, String attribute) {
-        this.value = value;
-        this.attr = attribute;
+    public AttrExpr(Expr target, IdExpr attr) {
+        this.target = target;
+        this.attr = attr;
     }
 
-    public Expr getValue() {
-        return value;
+    public Expr getTarget() {
+        return target;
     }
 
-    public String getAttr() {
+    public IdExpr getAttr() {
         return attr;
     }
 }

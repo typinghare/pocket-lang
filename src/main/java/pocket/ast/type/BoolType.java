@@ -5,7 +5,7 @@ package pocket.ast.type;
  * @author James Chan
  */
 public class BoolType extends Type {
-    public BoolType(String lexeme) {
-        super(lexeme);
+    public BoolType(String literal) {
+        super(literal);
     }
 }

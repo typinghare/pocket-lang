@@ -1,4 +1,4 @@
-package pocket.types;
+package pocket.vm.type;
 
 public class PocketObject {
     protected Object value;

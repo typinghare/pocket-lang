@@ -6,20 +6,20 @@ import java.util.List;
  * @author James Chan
  */
 public class CallExpr extends Expr {
-    private final Expr fn;
+    private final Expr target;
 
-    private final List<Expr> argumentList;
+    private final List<Expr> argList;
 
-    public CallExpr(Expr fn, List<Expr> argumentList) {
-        this.fn = fn;
-        this.argumentList = argumentList;
+    public CallExpr(Expr target, List<Expr> argList) {
+        this.target = target;
+        this.argList = argList;
     }
 
-    public List<Expr> getArgumentList() {
-        return argumentList;
+    public Expr getTarget() {
+        return target;
     }
 
-    public Expr getFn() {
-        return fn;
+    public List<Expr> getArgList() {
+        return argList;
     }
 }
