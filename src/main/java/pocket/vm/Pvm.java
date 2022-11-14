@@ -1,21 +1,11 @@
 package pocket.vm;
 
 import pocket.ast.Ast;
-import pocket.ast.expr.AttrExpr;
-import pocket.ast.expr.BinaryExpr;
-import pocket.ast.expr.BlockFnExpr;
 import pocket.ast.expr.Expr;
-import pocket.ast.stmt.AssignStmt;
-import pocket.ast.stmt.ExprStmt;
 import pocket.ast.stmt.Stmt;
 import pocket.common.NotNull;
-import pocket.vm.type.PocketFn;
-import pocket.vm.type.PocketNull;
+import pocket.vm.evaluator.Evaluator;
 import pocket.vm.type.PocketObject;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * Pocket virtual machine.
@@ -24,20 +14,46 @@ public class Pvm {
     /**
      * The abstract syntax tree to execute
      */
-    private final Ast ast;
+    private Ast ast;
 
     /**
      * The root scope.
      */
-    private final Scope rootScope;
+    private Scope rootScope;
 
+    /**
+     * The current scope.
+     */
     private Scope curScope;
+
+    private final EvaluatorFactory evaluatorFactory = new EvaluatorFactory();
+
+    private final ExecutorFactory executorFactory = new ExecutorFactory();
 
     /**
      * Creates a Pocket virtual machine.
-     * @param ast abstract syntax tree to execute.
      */
-    public Pvm(Ast ast) {
+    private Pvm() {
+    }
+
+    public void putSymbol(String name, Symbol symbol) {
+        curScope.putSymbol(name, symbol);
+        System.out.println("[assign] " + name + " = " + symbol);
+    }
+
+    private static final class InstanceHolder {
+        private static final Pvm instance = new Pvm();
+    }
+
+    public static Pvm instance() {
+        return InstanceHolder.instance;
+    }
+
+    /**
+     * Initialize the PVM.
+     * @param ast abstract syntax tree to bind
+     */
+    public void init(Ast ast) {
         this.ast = ast;
         curScope = rootScope = new Scope(null);
     }
@@ -56,34 +72,7 @@ public class Pvm {
      * @param stmt statement to execute
      */
     protected void executeStmt(Stmt stmt) {
-        if (stmt instanceof ExprStmt) {
-            eval(((ExprStmt) stmt).getExpr());
-        } else if (stmt instanceof AssignStmt) {
-            final Expr type = ((AssignStmt) stmt).getType();
-            final List<Expr> targetList = ((AssignStmt) stmt).getTargetList();
-            final List<Expr> valueList = ((AssignStmt) stmt).getValueList();
-
-            // TODO: I haven't designed the class system, therefore, only built-in type is accepted.
-            // TODO: And also, the target should only be an AttrExpr
-            final List<String> nameList = new ArrayList<>();
-
-            for (final Expr target : targetList) {
-                if (target instanceof AttrExpr) {
-                    nameList.add(((AttrExpr) target).getAttr().getLexeme());
-                }
-            }
-
-            final Iterator<String> nameIterator = nameList.iterator();
-
-            for (final Expr value : valueList) {
-                final PocketObject pocketObject = eval(value);
-                final Symbol symbol = new Symbol(pocketObject);
-
-                if (nameIterator.hasNext()) {
-                    curScope.putSymbol(nameIterator.next(), symbol);
-                }
-            }
-        }
+        executorFactory.getExecutor(stmt).execute(stmt);
     }
 
     /**
@@ -91,15 +80,12 @@ public class Pvm {
      * @param expr expression to evaluate
      * @return a pocket object
      */
-    protected @NotNull PocketObject eval(Expr expr) {
-        if (expr instanceof AttrExpr) {
-            return PocketNull.NULL;
-        } else if (expr instanceof BinaryExpr) {
-            return PocketNull.NULL;
-        } else if (expr instanceof BlockFnExpr) {
-            return new PocketFn(expr);
-        }
+    public @NotNull PocketObject eval(Expr expr) {
+        final Evaluator evaluator = evaluatorFactory.getEvaluator(expr);
+        final PocketObject pocketObject = evaluator.eval(expr);
 
-        return PocketNull.NULL;
+        System.out.println(pocketObject);
+
+        return pocketObject;
     }
 }

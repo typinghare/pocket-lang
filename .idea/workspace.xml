@@ -5,52 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc75ee29-cbb5-4437-b3e2-93c33dceeaf2" name="Changes" comment="merge ast">
-      <change afterPath="$PROJECT_DIR$/docs/ast.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/NullType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/common/NotNull.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/Pvm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/Scope.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/SymbolTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketNull.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pocket/parser/AstTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pocket/parser/VmTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/EvaluatorFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/ExecutorFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/Type.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/evaluator/AttrExprEvaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/evaluator/BinaryExprEvaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/evaluator/Evaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/evaluator/TypeExprEvaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/executor/AssignStmtExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/executor/Executor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/executor/ExprStmtExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/specification.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/specification.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/Ast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/Ast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/AttrExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/AttrExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BinaryExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BinaryExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BlockFnExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BlockFnExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BoolExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/CallExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/CallExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/FnExpr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/IdExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/IdExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/UnaryExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/UnaryExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/IfStmt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/LoopStmt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/type/BoolType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/BoolType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/type/FloatType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/FloatType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/type/FnType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/type/IntType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/IntType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/type/StrType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/StrType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/type/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/types/PocketArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/types/PocketBool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketBool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/types/PocketFloat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketFloat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/types/PocketFn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketFn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/types/PocketInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/types/PocketList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/types/PocketMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/types/PocketNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/types/PocketObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/types/PocketStr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketStr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/Environment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/Pvm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/Pvm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/Symbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/VirtualMachine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/twig/TreePrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/twig/TreePrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/twig/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/twig/template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pocket/parser/AstTestCase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pocket/parser/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketBool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketBool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketFloat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketFloat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketStr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketStr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pocket/parser/VmTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pocket/parser/VmTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +34,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -79,6 +54,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/docs/ast.md" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/docs/development.md" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/docs/pocket.md" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
   </component>
@@ -106,7 +82,7 @@
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.VmTest.runAST">
+  <component name="RunManager" selected="JUnit.VmTest.AssignStmtTest">
     <configuration name="AstTest.constructAST" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pocket" />
       <extension name="coverage">
@@ -139,6 +115,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VmTest.AssignStmtTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pocket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pocket.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pocket.parser" />
+      <option name="MAIN_CLASS_NAME" value="pocket.parser.VmTest" />
+      <option name="METHOD_NAME" value="AssignStmtTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VmTest.binaryExprTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pocket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pocket.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pocket.parser" />
+      <option name="MAIN_CLASS_NAME" value="pocket.parser.VmTest" />
+      <option name="METHOD_NAME" value="binaryExprTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VmTest.runAST" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pocket" />
       <extension name="coverage">
@@ -157,6 +165,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.VmTest.AssignStmtTest" />
+        <item itemvalue="JUnit.VmTest.binaryExprTest" />
         <item itemvalue="JUnit.VmTest.runAST" />
         <item itemvalue="JUnit.AstTest.printAST" />
         <item itemvalue="JUnit.AstTest.constructAST" />
@@ -186,9 +196,17 @@
       <workItem from="1667744963040" duration="1287000" />
       <workItem from="1667881640530" duration="2376000" />
       <workItem from="1667931733173" duration="3836000" />
-      <workItem from="1667965655591" duration="3306000" />
+      <workItem from="1667965655591" duration="4245000" />
+      <workItem from="1668366109137" duration="10532000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="merge ast">
+      <created>1668033097971</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668033097971</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,19 +217,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="ast" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>

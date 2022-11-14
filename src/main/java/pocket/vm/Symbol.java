@@ -7,10 +7,11 @@ public class Symbol {
 
     private boolean isAccessible = true;
 
-    public String type;
+    public final Type type;
 
-    Symbol(PocketObject pocketObject) {
+    public Symbol(PocketObject pocketObject, Type type) {
         this.pocketObject = pocketObject;
+        this.type = type;
     }
 
     public boolean setPocketObject(PocketObject pocketObject) {
@@ -32,11 +33,13 @@ public class Symbol {
         isAccessible = accessible;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    @Override
+    public String toString() {
+//        return String.format("%s(%s)", type.toString(), pocketObject.toString());
+        return pocketObject.toString();
     }
 }

@@ -11,8 +11,17 @@ public class PocketInt extends PocketNumber {
         this.value = Integer.valueOf(value);
     }
 
+    public PocketInt(Integer value) {
+        this.value = value;
+    }
+
     @Override
     public Integer getValue() {
         return value;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Int{%d}", value);
     }
 }
