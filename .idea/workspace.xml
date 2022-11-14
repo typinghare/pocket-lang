@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc75ee29-cbb5-4437-b3e2-93c33dceeaf2" name="Changes" comment="merge ast">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/EvaluatorFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/ExecutorFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/evaluator/AttrExprEvaluator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/evaluator/BinaryExprEvaluator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/evaluator/Evaluator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/evaluator/TypeExprEvaluator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/executor/AssignStmtExecutor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/executor/Executor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/executor/ExprStmtExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/Pvm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/Pvm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/Symbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketBool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketBool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketFloat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketFloat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketStr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketStr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pocket/parser/VmTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pocket/parser/VmTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="dc75ee29-cbb5-4437-b3e2-93c33dceeaf2" name="Changes" comment="pvm" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,6 +177,7 @@
       <workItem from="1667931733173" duration="3836000" />
       <workItem from="1667965655591" duration="4245000" />
       <workItem from="1668366109137" duration="10532000" />
+      <workItem from="1668400094905" duration="301000" />
     </task>
     <task id="LOCAL-00002" summary="merge ast">
       <created>1668033097971</created>
@@ -206,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668033097971</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="pvm">
+      <created>1668400128439</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668400128439</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +212,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="merge ast" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge ast" />
+    <MESSAGE value="pvm" />
+    <option name="LAST_COMMIT_MESSAGE" value="pvm" />
   </component>
 </project>
