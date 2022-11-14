@@ -4,7 +4,101 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc75ee29-cbb5-4437-b3e2-93c33dceeaf2" name="Changes" comment="pvm" />
+    <list default="true" id="dc75ee29-cbb5-4437-b3e2-93c33dceeaf2" name="Changes" comment="pvm">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/AbstractSyntaxTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/FnExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/Evaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/EvaluatorFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/Executor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/ExecutorFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/PocketVirtualMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/evaluator/AttrExprEvaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/evaluator/BinaryExprEvaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/evaluator/CallExprEvaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/evaluator/FnExprEvaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/evaluator/IdExprEvaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/evaluator/TypeExprEvaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/executor/AssignStmtExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/executor/ExprStmtExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketBool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketFn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketInt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketStr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/Ast.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/Statement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/AttrExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/AttrExpr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BinaryExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BinaryExpr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BlockFnExpr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/CallExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/CallExpr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/Expr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/Expr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/IdExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/IdExpr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/UnaryExpr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BinaryOp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/op/BinaryOp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/BoolOp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/CompareOp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/Op.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/op/Op.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/operator/UnaryOp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/AssignStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/AssignStmt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/ExprStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/ExprStmt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/Stmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/stmt/Stmt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/type/BoolType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/BoolType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/type/FloatType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/FloatType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/type/IntType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/IntType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/type/NullType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/NullType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/type/StrType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/StrType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/type/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/type/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/common/NotNull.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/AbstractSyntaxTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/Lexer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/LineToken.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/NonTerminal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/Notation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/ParseTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/ParseUnit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/Parser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/ParserBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/PatternTokenType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/Production.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/StringTokenType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/Terminal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/Token.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/TokenProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/TokenType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/Tokenizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/exception/LexicalAnalysisException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/parser/exception/ProductionException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/EvaluatorFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/ExecutorFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/Pvm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/Scope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/Scope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/Symbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/SymbolTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/evaluator/AttrExprEvaluator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/evaluator/BinaryExprEvaluator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/evaluator/Evaluator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/evaluator/TypeExprEvaluator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/executor/AssignStmtExecutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/executor/Executor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/executor/ExprStmtExecutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketArray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketBool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketFloat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketFloat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketFn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketInt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketNull.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/vm/type/PocketStr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pocket/parser/AstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pocket/parser/AbstractSyntaxTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pocket/parser/VmTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pocket/parser/VmTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,21 +142,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "/Users/jameschan/Program/pocket/src/main/java/pocket/pvm/lang/type",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="pocket.parser" />
+      <recent name="pocket.ast.stmt" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pocket.pvm" />
+      <recent name="pocket.pvm.lang" />
+      <recent name="pocket.ast.op" />
+    </key>
+  </component>
   <component name="RunManager" selected="JUnit.VmTest.AssignStmtTest">
-    <configuration name="AstTest.constructAST" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AbstractSyntaxTreeTest.constructAST" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pocket" />
       <extension name="coverage">
         <pattern>
@@ -71,14 +180,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pocket.parser" />
-      <option name="MAIN_CLASS_NAME" value="pocket.parser.AstTest" />
+      <option name="MAIN_CLASS_NAME" value="pocket.parser.AbstractSyntaxTreeTest" />
       <option name="METHOD_NAME" value="constructAST" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AstTest.printAST" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AbstractSyntaxTreeTest.printAST" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pocket" />
       <extension name="coverage">
         <pattern>
@@ -87,7 +196,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pocket.parser" />
-      <option name="MAIN_CLASS_NAME" value="pocket.parser.AstTest" />
+      <option name="MAIN_CLASS_NAME" value="pocket.parser.AbstractSyntaxTreeTest" />
       <option name="METHOD_NAME" value="printAST" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -147,8 +256,8 @@
         <item itemvalue="JUnit.VmTest.AssignStmtTest" />
         <item itemvalue="JUnit.VmTest.binaryExprTest" />
         <item itemvalue="JUnit.VmTest.runAST" />
-        <item itemvalue="JUnit.AstTest.printAST" />
-        <item itemvalue="JUnit.AstTest.constructAST" />
+        <item itemvalue="JUnit.AbstractSyntaxTreeTest.printAST" />
+        <item itemvalue="JUnit.AbstractSyntaxTreeTest.constructAST" />
       </list>
     </recent_temporary>
   </component>
@@ -178,6 +287,7 @@
       <workItem from="1667965655591" duration="4245000" />
       <workItem from="1668366109137" duration="10532000" />
       <workItem from="1668400094905" duration="301000" />
+      <workItem from="1668400712379" duration="6958000" />
     </task>
     <task id="LOCAL-00002" summary="merge ast">
       <created>1668033097971</created>
@@ -204,7 +314,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/antlr" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

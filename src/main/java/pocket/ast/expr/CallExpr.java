@@ -3,7 +3,7 @@ package pocket.ast.expr;
 import java.util.List;
 
 /**
- * @author James Chan
+ * Call expression.
  */
 public class CallExpr extends Expr {
     private final Expr target;

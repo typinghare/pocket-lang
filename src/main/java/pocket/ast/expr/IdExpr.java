@@ -1,16 +1,16 @@
 package pocket.ast.expr;
 
 /**
- * Expression that consists of only one identifier token.
+ * Id expression.
  */
 public class IdExpr extends Expr {
     private final String value;
 
-    public IdExpr(String lexeme) {
-        this.value = lexeme;
+    public IdExpr(String value) {
+        this.value = value;
     }
 
-    public String getLexeme() {
+    public String getValue() {
         return value;
     }
 }

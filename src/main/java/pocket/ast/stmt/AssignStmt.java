@@ -1,15 +1,11 @@
 package pocket.ast.stmt;
 
-import pocket.ast.expr.AttrExpr;
 import pocket.ast.expr.Expr;
 
 import java.util.List;
 
 /**
- * @author James Chan
- * @example a = b + 2;  // type is omitted; implicit declaration
- * @example Int a = b + 2;   // declaration assignment
- * @example Int a = 1, b = 2;   // declaration with two targets and values
+ * Assignment statement.
  */
 public class AssignStmt extends Stmt {
     private final Expr type;

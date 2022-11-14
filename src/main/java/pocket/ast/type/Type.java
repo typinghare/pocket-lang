@@ -1,11 +1,8 @@
 package pocket.ast.type;
 
-import pocket.ast.Node;
+import pocket.ast.AbstractSyntaxTree;
 
-/**
- * Literal container.
- */
-public abstract class Type extends Node {
+public abstract class Type extends AbstractSyntaxTree.Node {
     /**
      * The lexeme of this type.
      */
