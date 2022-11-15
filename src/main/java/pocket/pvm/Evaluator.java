@@ -13,7 +13,7 @@ public class Evaluator {
     /**
      * Evaluates an expression.
      * @param expr expression to execute
-     * @return a pocket object yield by the expression
+     * @return a pocket object yielded by the expression
      */
     public PocketObject evaluate(Expr expr) {
         return pocketVirtualMachine
@@ -22,3 +22,4 @@ public class Evaluator {
                 .evaluate(expr);
     }
 }
+

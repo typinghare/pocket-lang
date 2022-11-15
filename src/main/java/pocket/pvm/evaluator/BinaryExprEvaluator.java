@@ -24,7 +24,7 @@ public class BinaryExprEvaluator extends Evaluator {
         final PocketObject leftValue = super.evaluate(((BinaryExpr) expr).getLeft());
         final PocketObject rightValue = super.evaluate(((BinaryExpr) expr).getRight());
 
-        return switch (((BinaryExpr) expr).getOperator()) {
+        return switch (((BinaryExpr) expr).getOp()) {
             case Plus -> evaluatePlus(leftValue, rightValue);
             case Minus -> evaluateMinus(leftValue, rightValue);
             case Multiply -> evaluateMultiply(leftValue, rightValue);

@@ -63,7 +63,7 @@ public record AbstractSyntaxTree(Stmt root) {
                 propertyMap.put("value", exprProcessor.apply(((AttrExpr) node).getTarget()));
                 propertyMap.put("attr", exprProcessor.apply(((AttrExpr) node).getAttr()));
             } else if (node instanceof BinaryExpr) {
-                propertyMap.put("operator", ((BinaryExpr) node).getOperator().toString());
+                propertyMap.put("operator", ((BinaryExpr) node).getOp().toString());
                 propertyMap.put("left", exprProcessor.apply(((BinaryExpr) node).getLeft()));
                 propertyMap.put("right", exprProcessor.apply(((BinaryExpr) node).getRight()));
             } else if (node instanceof CallExpr) {

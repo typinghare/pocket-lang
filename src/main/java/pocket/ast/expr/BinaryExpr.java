@@ -9,7 +9,7 @@ public class BinaryExpr extends Expr {
     /**
      * Operator.
      */
-    private final BinaryOp operator;
+    private final BinaryOp op;
 
     /**
      * Left operand.
@@ -21,14 +21,14 @@ public class BinaryExpr extends Expr {
      */
     private final Expr right;
 
-    public BinaryExpr(BinaryOp operator, Expr left, Expr right) {
-        this.operator = operator;
+    public BinaryExpr(BinaryOp op, Expr left, Expr right) {
+        this.op = op;
         this.left = left;
         this.right = right;
     }
 
-    public BinaryOp getOperator() {
-        return operator;
+    public BinaryOp getOp() {
+        return op;
     }
 
     public Expr getLeft() {

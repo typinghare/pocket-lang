@@ -4,24 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc75ee29-cbb5-4437-b3e2-93c33dceeaf2" name="Changes" comment="feat: refactor ast and pvm">
+    <list default="true" id="dc75ee29-cbb5-4437-b3e2-93c33dceeaf2" name="Changes" comment="grammar additions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ast.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ast.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/idea.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/idea.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/pocket.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/pocket.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/FnExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/FnExpr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/pvm/Evaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/Evaluator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/pvm/PocketVirtualMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/PocketVirtualMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/pvm/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/Symbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/pvm/evaluator/FnExprEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/evaluator/FnExprEvaluator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/pvm/executor/AssignStmtExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/executor/AssignStmtExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/BasicDataType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketFloat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketFloat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketFn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketFn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/lang/type/PocketObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/twig/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/twig/template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pocket/parser/VmTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pocket/parser/PocketVirtualMachineTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/AbstractSyntaxTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/AbstractSyntaxTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BinaryExpr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/ast/expr/BinaryExpr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pocket/pvm/evaluator/BinaryExprEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pocket/pvm/evaluator/BinaryExprEvaluator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,23 +53,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "/Users/jameschan/Program/pocket/src/main/java/pocket/pvm/lang/type",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jameschan/Program/pocket/src/main/java/pocket/pvm/lang/type&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="pocket.parser" />
