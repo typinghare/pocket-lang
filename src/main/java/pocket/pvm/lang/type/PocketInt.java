@@ -4,7 +4,7 @@ package pocket.pvm.lang.type;
  * Pocket int.
  */
 public class PocketInt extends PocketNumber {
-    protected Integer value;
+    protected final Integer value;
 
     public PocketInt(String value) {
         this.value = Integer.valueOf(value);

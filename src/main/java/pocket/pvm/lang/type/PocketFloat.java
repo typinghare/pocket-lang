@@ -1,7 +1,7 @@
 package pocket.pvm.lang.type;
 
 public class PocketFloat extends PocketNumber {
-    protected Float value;
+    protected final Float value;
 
     public PocketFloat(String value) {
         this.value = Float.valueOf(value);

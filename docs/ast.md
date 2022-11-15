@@ -35,20 +35,20 @@ Console.print(d);
 
 ~~~typescript
 class AssignStmt extends Stmt {
-  Expr type;
+  Expr basicDataType;
   List<Expr> targetList;
   List<Expr> valueList;
 }
 ~~~
 
-The assignment statement is a basic kind of statement. The `type` attribute, which implies the type of target variables, is the leftmost expression of this statement. Since there can be more than one assignments in an assignment stament, the target and value are lists. Target and value in two lists are corresponding. Take the third line for example, the target list and value list are respectively:
+The assignment statement is a basic kind of statement. The `basicDataType` attribute, which implies the basicDataType of target variables, is the leftmost expression of this statement. Since there can be more than one assignments in an assignment stament, the target and value are lists. Target and value in two lists are corresponding. Take the third line for example, the target list and value list are respectively:
 
 ~~~typescript
 targetList: ["a", "b", "c", "d"]
 valueList: ["2", "3", "4", null]
 ~~~
 
-In Pocket, the `type` attribute can be `null`. For example, the fourth line doesn't declare the type of target `d`. Note that in Pocket, **a variable is not allowed to change its type in a single scope**.
+In Pocket, the `basicDataType` attribute can be `null`. For example, the fourth line doesn't declare the basicDataType of target `d`. Note that in Pocket, **a variable is not allowed to change its basicDataType in a single scope**.
 
 ## Expr
 
@@ -66,7 +66,7 @@ Id expression is one of the atom expressions. The attribute `value` is the name 
 
 ~~~typescript
 class TypeExpr extends Expr {
-  Type type;
+  Type basicDataType;
 }
 
 abstract class Type extends Node {
@@ -133,7 +133,7 @@ class BlockFnExpr extends Expr {
 }
 ~~~
 
-A block function expression is a function without parameters, including the parentheses. The whole six lines of the example is a block function, the return type of which is ignored. If the return type is missing, the default value is `void`, meaning that the function should not have a return value as well as a return statement.
+A block function expression is a function without parameters, including the parentheses. The whole six lines of the example is a block function, the return basicDataType of which is ignored. If the return basicDataType is missing, the default value is `void`, meaning that the function should not have a return value as well as a return statement.
 
 ### CallExpr
 

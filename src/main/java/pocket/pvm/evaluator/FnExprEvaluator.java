@@ -4,6 +4,7 @@ import pocket.ast.expr.Expr;
 import pocket.ast.expr.FnExpr;
 import pocket.pvm.Evaluator;
 import pocket.pvm.PocketVirtualMachine;
+import pocket.pvm.lang.type.PocketFn;
 import pocket.pvm.lang.type.PocketObject;
 
 /**
@@ -18,6 +19,6 @@ public class FnExprEvaluator extends Evaluator {
     public PocketObject evaluate(Expr expr) {
         assert expr instanceof FnExpr;
 
-        return null;
+        return new PocketFn((FnExpr) expr, pocketVirtualMachine);
     }
 }

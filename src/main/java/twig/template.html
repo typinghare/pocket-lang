@@ -238,7 +238,7 @@
                 continue;
 
             const value = object[propertyKey];
-            const type = getValueType(value);
+            const basicDataType = getValueType(value);
             const $property = emptyElement('div', 'tree-property');
             const $propertyKey = element('span', propertyKey, 'tree-property-key');
             const $colon = element('span', ':', 'tree-property-colon')
@@ -247,7 +247,7 @@
             $property.append($propertyKey);
             $property.append($colon);
 
-            renderValue($property, value, type, $propertyKey);
+            renderValue($property, value, basicDataType, $propertyKey);
             $property.append(element('span', ',', 'tree-property-comma'));
         }
     }
@@ -257,8 +257,8 @@
             const $list = emptyElement('div', 'tree-property');
             $listContainer.append($list);
 
-            const type = getValueType(item);
-            renderValue($list, item, type);
+            const basicDataType = getValueType(item);
+            renderValue($list, item, basicDataType);
             $list.append(element('span', ',', 'tree-property-comma'));
             $list.append(element('br'));
         }
@@ -274,19 +274,19 @@
         else return Type.ID_OR_TYPE;
     }
 
-    function renderValue($parent, value, type, $name = null) {
-        if (type === Type.OBJECT) {
+    function renderValue($parent, value, basicDataType, $name = null) {
+        if (basicDataType === Type.OBJECT) {
             renderObjectNode($parent, value);
-        } else if (type === Type.LIST) {
+        } else if (basicDataType === Type.LIST) {
             renderListNode($parent, value, $name);
-        } else if (type === Type.ID_OR_TYPE) {
+        } else if (basicDataType === Type.ID_OR_TYPE) {
             const $value = element('span', value.toString(), 'tree-value');
             $parent.append($value);
         }
     }
 
     const jsonString = '{{ jsonString }}';
-    // const jsonString = '{"expr":{"stmtList":[{"targetList":["Id(a)"],"valueList":["Type(1)"],"type":"Id(Int)","$name$":"AssignStmt"},{"expr":{"ExprList":["Id(a)"],"$name$":"CallExpr"},"$name$":"ExprStmt"}],"$name$":"BlockFnExpr"},"$name$":"ExprStmt"}'
+    // const jsonString = '{"expr":{"stmtList":[{"targetList":["Id(a)"],"valueList":["Type(1)"],"basicDataType":"Id(Int)","$name$":"AssignStmt"},{"expr":{"ExprList":["Id(a)"],"$name$":"CallExpr"},"$name$":"ExprStmt"}],"$name$":"BlockFnExpr"},"$name$":"ExprStmt"}'
     // console.log(jsonString)
 
     let treeObject = null;

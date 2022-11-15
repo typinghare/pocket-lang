@@ -33,6 +33,12 @@ public class BinaryExprEvaluator extends Evaluator {
         };
     }
 
+    /**
+     * Evaluates plus binary operation.
+     * @param leftValue  left value
+     * @param rightValue right value
+     * @return the value after operation
+     */
     public PocketObject evaluatePlus(PocketObject leftValue, PocketObject rightValue) {
         // now only support number plus number
         if (leftValue instanceof PocketNumber && rightValue instanceof PocketNumber) {

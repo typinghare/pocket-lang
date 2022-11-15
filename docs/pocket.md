@@ -54,7 +54,7 @@ Or you can do like this:
 
 ### Data types
 
-There are four **basic data types** in Pocket: `Int`, `Float`, `Bool`, and `Str`; three **structural data types**: `Array`, `List`, and `Map`; one special data type: `Func`. The declarations of different data types are as follows.
+There are four **basic data types** in Pocket: `Int`, `Float`, `Bool`, and `Str`; three **structural data types**: `Array`, `List`, and `Map`; one special data basicDataType: `Func`. The declarations of different data types are as follows.
 
 ~~~java
 Int myInt = 5;

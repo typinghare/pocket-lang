@@ -35,7 +35,7 @@ public static void main(String[] args) {
 
 Some pioneers have answered this question. There are three kinds of structure: statement, expression, and literal.
 
-Literal is the simplest. `0`, `10`, `3`, `2`, and `1` are literals in the above sample, and they are all integer types. Notice that we should specify the type of literals for the next semantic analysis. However, we don't have to parse their value, just keep them as lexemes.
+Literal is the simplest. `0`, `10`, `3`, `2`, and `1` are literals in the above sample, and they are all integer types. Notice that we should specify the basicDataType of literals for the next semantic analysis. However, we don't have to parse their value, just keep them as lexemes.
 
 An expression is a combination of values and functions that are combined and interpreted by the compiler to create a new value. The key phrase is "new value". That means an expression is always accompanied by a new value. The simplest expression is a literal, such as `0` on line 2 and `10` on line 3. `i * 2 + 1` is a more complex expression, which contains two binary operators.
 
@@ -91,8 +91,8 @@ public abstract class Stmt extends Node {}	// statement
 After that we create some concrete classes extends them.
 
 ~~~java
-public class IntType extends Type {}		// integer type
-public class FloatType extends Type {}	// float type 
+public class IntType extends Type {}		// integer basicDataType
+public class FloatType extends Type {}	// float basicDataType 
 ~~~
 
 ~~~java
@@ -132,7 +132,7 @@ public class BlockFnExpr extends Expr {
 
 ~~~java
 public class AssignStmt extends Stmt {
-  private Expr type;
+  private Expr basicDataType;
   private Expr target;
   private Expr value;
 }

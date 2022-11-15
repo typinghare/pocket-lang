@@ -1,6 +1,10 @@
 package pocket.pvm.lang;
 
-public enum Type {
+/**
+ * Basic data type enumeration.
+ */
+public enum BasicDataType {
+    Object,
     Int,
     Float,
     Str,

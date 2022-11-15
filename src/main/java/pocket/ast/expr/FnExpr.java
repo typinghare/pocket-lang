@@ -1,5 +1,6 @@
 package pocket.ast.expr;
 
+import pocket.ast.stmt.ExprStmt;
 import pocket.ast.stmt.Stmt;
 
 import java.util.List;
@@ -16,14 +17,14 @@ public class FnExpr extends Expr {
 
     private final List<Stmt> stmtList;
 
-    private final Stmt returnStmt;
+    private final ExprStmt returnStmt;
 
     public FnExpr(
             List<Expr> paramTypeList,
             List<String> paramNameList,
             Expr returnType,
             List<Stmt> stmtList,
-            Stmt returnStmt
+            ExprStmt returnStmt
     ) {
         this.paramTypeList = paramTypeList;
         this.paramNameList = paramNameList;
@@ -35,7 +36,7 @@ public class FnExpr extends Expr {
     public FnExpr(
             Expr returnType,
             List<Stmt> stmtList,
-            Stmt returnStmt
+            ExprStmt returnStmt
     ) {
         this(null, null, returnType, stmtList, returnStmt);
     }
@@ -56,7 +57,11 @@ public class FnExpr extends Expr {
         return stmtList;
     }
 
-    public Stmt getReturnStmt() {
+    public ExprStmt getReturnStmt() {
         return returnStmt;
+    }
+
+    public boolean isBlockFn() {
+        return paramTypeList == null && paramNameList == null;
     }
 }

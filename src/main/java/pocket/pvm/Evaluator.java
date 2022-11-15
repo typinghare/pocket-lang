@@ -16,13 +16,9 @@ public class Evaluator {
      * @return a pocket object yield by the expression
      */
     public PocketObject evaluate(Expr expr) {
-        final PocketObject pocketObject = pocketVirtualMachine
+        return pocketVirtualMachine
                 .getEvaluatorFactory()
                 .getEvaluator(expr.getClass())
                 .evaluate(expr);
-
-        System.out.println(pocketObject);
-
-        return pocketObject;
     }
 }

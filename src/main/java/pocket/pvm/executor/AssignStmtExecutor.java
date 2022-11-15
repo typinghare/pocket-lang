@@ -1,5 +1,6 @@
 package pocket.pvm.executor;
 
+import pocket.ast.expr.AttrExpr;
 import pocket.ast.expr.Expr;
 import pocket.ast.expr.IdExpr;
 import pocket.ast.stmt.AssignStmt;
@@ -7,7 +8,7 @@ import pocket.ast.stmt.Stmt;
 import pocket.pvm.Executor;
 import pocket.pvm.PocketVirtualMachine;
 import pocket.pvm.Symbol;
-import pocket.pvm.lang.Type;
+import pocket.pvm.lang.BasicDataType;
 import pocket.pvm.lang.type.*;
 
 import java.util.List;
@@ -36,6 +37,8 @@ public class AssignStmtExecutor extends Executor {
                 final Symbol symbol = new Symbol(pocketObject, getTypeOf(pocketObject));
 
                 pocketVirtualMachine.putSymbol(name, symbol);
+            } else if (target instanceof AttrExpr) {
+                throw new RuntimeException();
             } else {
                 // Not implement
                 throw new RuntimeException();
@@ -43,15 +46,15 @@ public class AssignStmtExecutor extends Executor {
         }
     }
 
-    public Type getTypeOf(PocketObject pocketObject) {
+    public BasicDataType getTypeOf(PocketObject pocketObject) {
         if (pocketObject instanceof PocketInt) {
-            return Type.Int;
+            return BasicDataType.Int;
         } else if (pocketObject instanceof PocketFloat) {
-            return Type.Float;
+            return BasicDataType.Float;
         } else if (pocketObject instanceof PocketBool) {
-            return Type.Bool;
+            return BasicDataType.Bool;
         } else if (pocketObject instanceof PocketFn) {
-            return Type.Fn;
+            return BasicDataType.Fn;
         } else {
             return null;
         }

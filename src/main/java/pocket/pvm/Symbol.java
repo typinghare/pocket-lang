@@ -1,23 +1,40 @@
 package pocket.pvm;
 
 
-import pocket.pvm.lang.Type;
+import pocket.pvm.lang.BasicDataType;
 import pocket.pvm.lang.type.PocketObject;
 
+/**
+ * Symbol.
+ */
 public class Symbol {
+    /**
+     * The pocket object this symbol contains.
+     */
     private PocketObject pocketObject;
 
-    private boolean isAccessible = true;
+    /**
+     * Whether this symbol is const. The pocket object cannot be changed if true.
+     */
+    private final boolean isConst = false;
 
-    public final Type type;
+    /**
+     * The basic date type of this object.
+     */
+    public final BasicDataType basicDataType;
 
-    public Symbol(PocketObject pocketObject, Type type) {
+    /**
+     * Creates  a symbol
+     * @param pocketObject  the initial pocket object
+     * @param basicDataType basic data type
+     */
+    public Symbol(PocketObject pocketObject, BasicDataType basicDataType) {
         this.pocketObject = pocketObject;
-        this.type = type;
+        this.basicDataType = basicDataType;
     }
 
     public boolean setPocketObject(PocketObject pocketObject) {
-        if (!isAccessible) return false;
+        if (!isConst) return false;
 
         this.pocketObject = pocketObject;
         return true;
@@ -27,16 +44,12 @@ public class Symbol {
         return pocketObject;
     }
 
-    public boolean isAccessible() {
-        return isAccessible;
+    public boolean isConst() {
+        return isConst;
     }
 
-    public void setAccessible(boolean accessible) {
-        isAccessible = accessible;
-    }
-
-    public Type getType() {
-        return type;
+    public BasicDataType getBasicDataType() {
+        return basicDataType;
     }
 
     @Override

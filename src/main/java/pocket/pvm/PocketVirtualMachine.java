@@ -1,7 +1,14 @@
 package pocket.pvm;
 
 import pocket.ast.AbstractSyntaxTree;
+import pocket.ast.expr.Expr;
+import pocket.ast.expr.FnExpr;
+import pocket.ast.stmt.ExprStmt;
 import pocket.ast.stmt.Stmt;
+import pocket.pvm.lang.type.PocketFn;
+import pocket.pvm.lang.type.PocketObject;
+
+import java.util.List;
 
 /**
  * Pocket virtual machine.
@@ -25,7 +32,7 @@ public class PocketVirtualMachine {
     /**
      * The current scope.
      */
-    private final Scope curScope;
+    private Scope curScope;
 
     public PocketVirtualMachine(AbstractSyntaxTree abstractSyntaxTree) {
         this.abstractSyntaxTree = abstractSyntaxTree;
@@ -36,8 +43,17 @@ public class PocketVirtualMachine {
      * Runs the abstract syntax tree.
      */
     public void run() {
-        final Stmt exprStmt = abstractSyntaxTree.getRoot();
-        executor.execute(exprStmt);
+        final Stmt rootStmt = abstractSyntaxTree.getRoot();
+
+        if (rootStmt instanceof ExprStmt) {
+            final Expr expr = ((ExprStmt) rootStmt).getExpr();
+            if (expr instanceof FnExpr) {
+                PocketFn rootFn = (PocketFn) evaluator.evaluate(expr);
+                final PocketObject result = rootFn.invoke(List.of());
+            }
+        } else {
+            executor.execute(rootStmt);
+        }
     }
 
     /**
@@ -64,5 +80,17 @@ public class PocketVirtualMachine {
 
     public ExecutorFactory getExecutorFactory() {
         return executorFactory;
+    }
+
+    /**
+     * Creates a new scope linked to the current scope.
+     * @return the scope created
+     */
+    public Scope newScope() {
+        final Scope scope = new Scope(curScope);
+
+        curScope = scope;
+
+        return scope;
     }
 }
