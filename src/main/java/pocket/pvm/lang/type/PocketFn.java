@@ -6,8 +6,6 @@ import pocket.ast.stmt.ExprStmt;
 import pocket.ast.stmt.Stmt;
 import pocket.pvm.Executor;
 import pocket.pvm.PocketVirtualMachine;
-import pocket.pvm.Symbol;
-import pocket.pvm.lang.BasicDataType;
 
 import java.util.List;
 
@@ -37,8 +35,8 @@ public class PocketFn extends PocketObject {
             // adds argument symbols to the current scope
             final List<Expr> paramTypeList = value.getParamTypeList();
             for (int i = 0; i < argumentCount; i++) {
-                final Symbol symbol = new Symbol(argumentValueList.get(i), BasicDataType.Object);
-                pocketVirtualMachine.putSymbol(paramNameList.get(i), symbol);
+                pocketVirtualMachine.getCurScope()
+                        .putObject(paramNameList.get(i), argumentValueList.get(i), null);
             }
         }
 
@@ -61,5 +59,10 @@ public class PocketFn extends PocketObject {
 
         final Expr expr = returnStmt.getExpr();
         return expr == null ? PocketObject.VOID : pocketVirtualMachine.getEvaluator().evaluate(expr);
+    }
+
+    @Override
+    public String toString() {
+        return "Fn";
     }
 }

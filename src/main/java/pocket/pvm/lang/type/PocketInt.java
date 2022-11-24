@@ -4,14 +4,17 @@ package pocket.pvm.lang.type;
  * Pocket int.
  */
 public class PocketInt extends PocketNumber {
+    public final static PocketClass intPocketClass = new PocketClass(PocketClass.objectPocketClass, "Int");
+
     protected final Integer value;
 
     public PocketInt(String value) {
-        this.value = Integer.valueOf(value);
+        this(Integer.valueOf(value));
     }
 
     public PocketInt(Integer value) {
         this.value = value;
+        this.pocketClass = intPocketClass;
     }
 
     @Override
@@ -21,6 +24,6 @@ public class PocketInt extends PocketNumber {
 
     @Override
     public String toString() {
-        return String.format("Int{%d}", value);
+        return String.format("Int(%d)", value);
     }
 }

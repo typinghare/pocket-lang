@@ -1,5 +1,7 @@
 package pocket.pvm;
 
+import pocket.pvm.lang.type.PocketObject;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -20,11 +22,22 @@ public class SymbolTable {
     }
 
     /**
-     * Puts a symbol in this symbol table.
-     * @param name   name of the symbol
-     * @param symbol symbol to put
+     * Puts a pocket object in this symbol table.
+     * @param name         name to assign
+     * @param pocketObject pocket object to put
      */
-    void putObject(String name, Symbol symbol) {
-        table.put(name, symbol);
+    void putObject(String name, PocketObject pocketObject) {
+        final Symbol symbol = table.get(name);
+
+        if (symbol == null) {
+            // create one
+            table.put(name, new Symbol(pocketObject));
+        } else {
+            if (!symbol.isConst()) {
+                symbol.setPocketObject(pocketObject);
+            } else {
+                throw new RuntimeException();
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 package pocket.pvm;
 
 
-import pocket.pvm.lang.BasicDataType;
+import pocket.pvm.lang.type.PocketClass;
 import pocket.pvm.lang.type.PocketObject;
 
 /**
@@ -14,27 +14,20 @@ public class Symbol {
     private PocketObject pocketObject;
 
     /**
-     * Whether this symbol is const. The pocket object cannot be changed if true.
+     * Whether this symbol is a constant. The pocket object cannot be changed if it is true.
      */
     private final boolean isConst = false;
 
     /**
-     * The basic date type of this object.
-     */
-    public final BasicDataType basicDataType;
-
-    /**
      * Creates  a symbol
-     * @param pocketObject  the initial pocket object
-     * @param basicDataType basic data type
+     * @param pocketObject the initial pocket object
      */
-    public Symbol(PocketObject pocketObject, BasicDataType basicDataType) {
+    public Symbol(PocketObject pocketObject) {
         this.pocketObject = pocketObject;
-        this.basicDataType = basicDataType;
     }
 
     public boolean setPocketObject(PocketObject pocketObject) {
-        if (!isConst) return false;
+        if (isConst) return false;
 
         this.pocketObject = pocketObject;
         return true;
@@ -48,8 +41,8 @@ public class Symbol {
         return isConst;
     }
 
-    public BasicDataType getBasicDataType() {
-        return basicDataType;
+    public PocketClass getType() {
+        return pocketObject.getPocketClass();
     }
 
     @Override

@@ -18,6 +18,13 @@ public class AttrExprEvaluator extends Evaluator {
     public PocketObject evaluate(Expr expr) {
         assert expr instanceof AttrExpr;
 
+        final PocketObject targetObject = super.evaluate(((AttrExpr) expr).getTarget());
+        final String attr = ((AttrExpr) expr).getAttr().getValue();
+
+        if (targetObject != null) {
+            return targetObject.getField(attr);
+        }
+
         return null;
     }
 }

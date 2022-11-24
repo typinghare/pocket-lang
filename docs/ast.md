@@ -5,9 +5,9 @@
 This document is a specification of the design, including data structure and design pattern, of the abstract syntax tree of Pocket. Although it is not a mandate to let the grammar comply with the data structure of the abstract syntax tree, it is considered to be a good practice to make them consistent. This documentation will revolve around the following simple example:
 
 ~~~typescript
-// hello-word.pok
+// sample1.pok
 {
-		Int a = 2 b = 3, c = 4, d;
+		Int a = 2, b = 3, c = 4, d;
   	d = a + b * c;
   	Console.print(d);
 }

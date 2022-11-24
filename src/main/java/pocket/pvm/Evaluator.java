@@ -16,6 +16,9 @@ public class Evaluator {
      * @return a pocket object yielded by the expression
      */
     public PocketObject evaluate(Expr expr) {
+        if (expr == null)
+            return null;
+
         return pocketVirtualMachine
                 .getEvaluatorFactory()
                 .getEvaluator(expr.getClass())

@@ -7,8 +7,6 @@ import pocket.ast.stmt.AssignStmt;
 import pocket.ast.stmt.Stmt;
 import pocket.pvm.Executor;
 import pocket.pvm.PocketVirtualMachine;
-import pocket.pvm.Symbol;
-import pocket.pvm.lang.BasicDataType;
 import pocket.pvm.lang.type.*;
 
 import java.util.List;
@@ -20,12 +18,9 @@ public class AssignStmtExecutor extends Executor {
 
     @Override
     public void execute(Stmt stmt) {
-        final Expr type = ((AssignStmt) stmt).getType();
+        final Expr typeExpr = ((AssignStmt) stmt).getType();
         final List<Expr> targetList = ((AssignStmt) stmt).getTargetList();
         final List<Expr> valueList = ((AssignStmt) stmt).getValueList();
-
-        // TODO: I haven't designed the class system, therefore, only built-in type is accepted.
-        // TODO: And also, the target should only be an AttrExpr
 
         for (int i = 0; i < targetList.size(); i++) {
             final Expr target = targetList.get(i);
@@ -33,11 +28,25 @@ public class AssignStmtExecutor extends Executor {
             if (target instanceof IdExpr) {
                 final String name = ((IdExpr) target).getValue();
                 final Expr value = valueList.get(i);
-                final PocketObject pocketObject = pocketVirtualMachine.getEvaluator().evaluate(value);
-                final Symbol symbol = new Symbol(pocketObject, getTypeOf(pocketObject));
+                PocketObject pocketObject = pocketVirtualMachine.getEvaluator().evaluate(value);
 
-                pocketVirtualMachine.putSymbol(name, symbol);
+                // type
+                final PocketObject type = pocketVirtualMachine.getEvaluator().evaluate(typeExpr);
+                assert type instanceof PocketClass || type == null;
+
+                // assign a value if the pocket object is null
+                if (pocketObject == null) {
+                    pocketObject = getInitialPocketObject((PocketClass) type);
+                }
+
+                if (type != null) {
+                    assert pocketObject != null;
+                    pocketVirtualMachine.getCurScope().putObject(name, pocketObject, (PocketClass) type);
+                } else {
+                    pocketVirtualMachine.getCurScope().putObject(name, pocketObject);
+                }
             } else if (target instanceof AttrExpr) {
+                // Not implement
                 throw new RuntimeException();
             } else {
                 // Not implement
@@ -46,17 +55,19 @@ public class AssignStmtExecutor extends Executor {
         }
     }
 
-    public BasicDataType getTypeOf(PocketObject pocketObject) {
-        if (pocketObject instanceof PocketInt) {
-            return BasicDataType.Int;
-        } else if (pocketObject instanceof PocketFloat) {
-            return BasicDataType.Float;
-        } else if (pocketObject instanceof PocketBool) {
-            return BasicDataType.Bool;
-        } else if (pocketObject instanceof PocketFn) {
-            return BasicDataType.Fn;
+    private PocketObject getInitialPocketObject(PocketClass pocketClass) {
+        if (pocketClass == PocketInt.intPocketClass) {
+            return new PocketInt(0);
+        } else if (pocketClass == PocketFloat.floatPocketClass) {
+            return new PocketFloat(0f);
+        } else if (pocketClass == PocketBool.boolPocketClass) {
+            return new PocketBool(false);
+        } else if (pocketClass == PocketStr.strPocketClass) {
+            return new PocketStr("");
+        } else if (pocketClass == PocketClass.classPocketClass) {
+            return PocketObject.VOID;
         } else {
-            return null;
+            return PocketObject.VOID;
         }
     }
 }

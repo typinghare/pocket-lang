@@ -1,14 +1,17 @@
 package pocket.pvm.lang.type;
 
 public class PocketFloat extends PocketNumber {
+    public final static PocketClass floatPocketClass = new PocketClass(PocketClass.objectPocketClass, "Float");
+
     protected final Float value;
 
     public PocketFloat(String value) {
-        this.value = Float.valueOf(value);
+        this(Float.valueOf(value));
     }
 
     public PocketFloat(Float value) {
         this.value = value;
+        this.pocketClass = floatPocketClass;
     }
 
     @Override
@@ -18,6 +21,6 @@ public class PocketFloat extends PocketNumber {
 
     @Override
     public String toString() {
-        return String.format("Float{%f}", value);
+        return String.format("Float(%f)", value);
     }
 }

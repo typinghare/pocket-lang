@@ -1,14 +1,17 @@
 package pocket.pvm.lang.type;
 
 public class PocketBool extends PocketObject {
+    public final static PocketClass boolPocketClass = new PocketClass(PocketClass.objectPocketClass, "Bool");
+
     private final Boolean value;
 
     public PocketBool(String value) {
-        this.value = Boolean.valueOf(value);
+        this(Boolean.valueOf(value));
     }
 
     public PocketBool(Boolean value) {
         this.value = value;
+        this.pocketClass = boolPocketClass;
     }
 
     public Boolean getValue() {
@@ -17,6 +20,6 @@ public class PocketBool extends PocketObject {
 
     @Override
     public String toString() {
-        return String.format("Bool{%s}", value);
+        return String.format("Bool(%s)", value);
     }
 }

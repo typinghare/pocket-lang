@@ -5,6 +5,8 @@ import pocket.ast.expr.Expr;
 import pocket.ast.expr.FnExpr;
 import pocket.ast.stmt.ExprStmt;
 import pocket.ast.stmt.Stmt;
+import pocket.pvm.cls.ClassManager;
+import pocket.pvm.lang.type.PocketClass;
 import pocket.pvm.lang.type.PocketFn;
 import pocket.pvm.lang.type.PocketObject;
 
@@ -24,10 +26,7 @@ public class PocketVirtualMachine {
 
     private final AbstractSyntaxTree abstractSyntaxTree;
 
-    /**
-     * The root scope.
-     */
-    private final Scope rootScope;
+    private final ClassManager classManager = new ClassManager();
 
     /**
      * The current scope.
@@ -36,13 +35,14 @@ public class PocketVirtualMachine {
 
     public PocketVirtualMachine(AbstractSyntaxTree abstractSyntaxTree) {
         this.abstractSyntaxTree = abstractSyntaxTree;
-        curScope = rootScope = new Scope(null);
     }
 
     /**
      * Runs the abstract syntax tree.
      */
     public void run() {
+        initializeLang();
+
         final Stmt rootStmt = abstractSyntaxTree.getRoot();
 
         if (rootStmt instanceof ExprStmt) {
@@ -50,20 +50,30 @@ public class PocketVirtualMachine {
             if (expr instanceof FnExpr) {
                 PocketFn rootFn = (PocketFn) evaluator.evaluate(expr);
                 final PocketObject result = rootFn.invoke(List.of());
+
+                System.out.println("[Return] " + (result == null ? "" : result.toString()));
             }
         } else {
             executor.execute(rootStmt);
         }
     }
 
+    private void initializeLang() {
+        curScope = new Scope(null);
+        curScope.putObject("Console", classManager.getPocketClass("Console"), PocketClass.classPocketClass);
+
+        curScope.putObject("Int", classManager.getPocketClass("Int"), PocketClass.classPocketClass);
+        curScope.putObject("Float", classManager.getPocketClass("Float"), PocketClass.classPocketClass);
+        curScope.putObject("Str", classManager.getPocketClass("Str"), PocketClass.classPocketClass);
+        curScope.putObject("Bool", classManager.getPocketClass("Bool"), PocketClass.classPocketClass);
+    }
+
     /**
-     * Puts a symbol to the symbol table of the current scope.
-     * @param name   name of the symbol
-     * @param symbol symbol to record
+     * Returns the current scope.
+     * @return the current scope
      */
-    public void putSymbol(String name, Symbol symbol) {
-        curScope.putSymbol(name, symbol);
-        System.out.println("[assign] " + name + " = " + symbol);
+    public Scope getCurScope() {
+        return curScope;
     }
 
     public Evaluator getEvaluator() {
@@ -92,5 +102,13 @@ public class PocketVirtualMachine {
         curScope = scope;
 
         return scope;
+    }
+
+    /**
+     * Returns a pocket class.
+     * @param className the name of the class
+     */
+    public PocketClass getPocketClass(String className) {
+        return classManager.getPocketClass(className);
     }
 }

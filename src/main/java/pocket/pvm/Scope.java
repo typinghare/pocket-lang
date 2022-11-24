@@ -1,5 +1,8 @@
 package pocket.pvm;
 
+import pocket.pvm.lang.type.PocketClass;
+import pocket.pvm.lang.type.PocketObject;
+
 import java.util.Optional;
 
 public class Scope {
@@ -29,12 +32,42 @@ public class Scope {
         return Optional.empty();
     }
 
+    public Optional<Symbol> getSymbolFromCurrentScope(String name) {
+        return symbolTable.getObject(name);
+    }
+
     /**
      * Puts a symbol to the symbol table of this scope.
-     * @param name name of the symbol
-     * @param symbol symbol to record
      */
-    public void putSymbol(String name, Symbol symbol) {
-        symbolTable.putObject(name, symbol);
+    public void putObject(String name, PocketObject pocketObject, PocketClass type) {
+        pocketObject.bindClass(type);
+
+        final Optional<Symbol> curSymbol = symbolTable.getObject(name);
+        if (curSymbol.isPresent()) {
+            final PocketClass pocketClass = curSymbol.get().getType();
+            if (pocketClass != type) {
+                throw new RuntimeException("Cannot change the type of variable.");
+            } else {
+                curSymbol.get().setPocketObject(pocketObject);
+            }
+        } else {
+            symbolTable.putObject(name, pocketObject);
+        }
+
+        System.out.printf("[Assignment] %s := %s %n", name, pocketObject);
+    }
+
+    public void putObject(String name, PocketObject pocketObject) {
+        final Optional<Symbol> curSymbol = symbolTable.getObject(name);
+        if (curSymbol.isPresent()) {
+            // update value
+            if (!curSymbol.get().setPocketObject(pocketObject)) {
+                throw new RuntimeException("Cannot update the value of a constant variable.");
+            }
+        } else {
+            symbolTable.putObject(name, pocketObject);
+        }
+
+        System.out.printf("[Assignment] %s := %s %n", name, pocketObject);
     }
 }

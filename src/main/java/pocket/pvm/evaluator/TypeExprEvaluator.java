@@ -30,6 +30,8 @@ public class TypeExprEvaluator extends Evaluator {
             return new PocketStr(literal);
         } else if (type instanceof BoolType) {
             return new PocketBool(literal);
+        } else if (type instanceof NullType) {
+            return null;
         } else {
             return null;
         }
